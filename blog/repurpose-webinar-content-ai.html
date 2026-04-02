@@ -117,6 +117,163 @@
       margin: 1.5rem 0;
     }
 
+    /* === TOPIC TAGS === */
+    .post-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .post-topics span {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      background: var(--white);
+    }
+
+    /* === AUTHOR CARD === */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .author-photos {
+      display: flex;
+      gap: 0;
+    }
+
+    .author-photos img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid var(--cream-dark);
+      margin: 0;
+    }
+
+    .author-photos img:last-child {
+      margin-left: -12px;
+    }
+
+    .author-info {
+      flex: 1;
+    }
+
+    .author-names {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .author-names a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .author-names a:hover {
+      color: var(--red);
+    }
+
+    .author-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 0.15rem;
+    }
+
+    /* === CALLOUT BOX === */
+    .callout {
+      background: var(--cream-dark);
+      border-left: 3px solid var(--red);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .callout strong {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.4rem;
+    }
+
+    /* === SECTION DIVIDER === */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 3rem 0;
+      position: relative;
+    }
+
+    .section-divider::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 1px;
+      background: var(--red);
+    }
+
+    /* === STEP BLOCKS === */
+    .step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .step-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.4rem;
+    }
+
+    .step p {
+      margin-bottom: 0;
+    }
+
+    /* === STYLED LIST === */
+    .post-body ul.styled-list {
+      list-style: none;
+      padding-left: 0;
+      border-left: 2px solid var(--border);
+      padding-left: 1.25rem;
+    }
+
+    .post-body ul.styled-list li {
+      margin-bottom: 0.85rem;
+      padding-left: 0;
+    }
+
+    @media (max-width: 768px) {
+      .author-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+      }
+    }
+
     .post-cta {
       background: var(--cream-dark);
       border: 1px solid var(--border);
@@ -188,8 +345,29 @@
     <div class="post-meta">
       <span class="post-tag">Episode 1</span>
       <h1 class="post-title">How to repurpose webinar content with AI: the full workflow we use for clients</h1>
-      <p class="post-byline">Barbara &amp; Bojana &middot; March 17, 2026</p>
+      <p class="post-byline">March 17, 2026</p>
+      <div class="post-topics">
+        <span>Claude Code</span>
+        <span>Content Marketing</span>
+        <span>Webinar Repurposing</span>
+        <span>AI Workflows</span>
+      </div>
       <div class="post-rule"></div>
+    </div>
+
+    <!-- AUTHOR CARD -->
+    <div class="author-card">
+      <div class="author-photos">
+        <img src="../NEW Barbara.jpg" alt="Barbara">
+        <img src="../NEWEST Bojana.png" alt="Bojana">
+      </div>
+      <div class="author-info">
+        <div class="author-names">
+          <a href="https://www.linkedin.com/in/barbara-startup-cookie/?skipRedirect=true" target="_blank">Barbara</a> &amp;
+          <a href="https://www.linkedin.com/in/bojanavojnovic/" target="_blank">Bojana</a>
+        </div>
+        <div class="author-desc">Builders at Two girls. one Claude.</div>
+      </div>
     </div>
 
     <div class="post-body">
@@ -214,6 +392,8 @@
 
       <p>That is the problem we solved. Not by cutting corners on quality, but by building a workflow that gets you from raw transcript to polished, multi-format content in hours instead of days.</p>
 
+      <div class="section-divider"></div>
+
       <h2>The two approaches: manual and automated</h2>
 
       <p>During the live session, we showed two distinct methods. Understanding when to use each one is important because they serve different purposes and produce different quality levels.</p>
@@ -237,13 +417,25 @@
 
       <p>Once the folder is connected, the workflow goes like this:</p>
 
-      <p><strong>Step 1: Upload the raw transcript.</strong> Download it directly from your webinar platform (we use Riverside). Do not clean it up. Do not edit it. Feed it in raw. Claude handles messy transcripts without issue.</p>
+      <div class="step">
+        <div class="step-label">Step 1</div>
+        <p><strong>Upload the raw transcript.</strong> Download it directly from your webinar platform (we use Riverside). Do not clean it up. Do not edit it. Feed it in raw. Claude handles messy transcripts without issue.</p>
+      </div>
 
-      <p><strong>Step 2: Ask Claude to outline the most engaging and insightful ideas.</strong> The prompt here is conversational, not formulaic. Barbara uses a voice transcription tool (Wispr) instead of typing, and the reason is counterintuitive: when you type, you self-edit. You trim. You filter out context that the AI actually needs. When you speak, you ramble, over-explain, provide background, and sometimes contradict yourself. All of that extra context makes the output dramatically better.</p>
+      <div class="step">
+        <div class="step-label">Step 2</div>
+        <p><strong>Ask Claude to outline the most engaging and insightful ideas.</strong> The prompt here is conversational, not formulaic. Barbara uses a voice transcription tool (Wispr) instead of typing, and the reason is counterintuitive: when you type, you self-edit. You trim. You filter out context that the AI actually needs. When you speak, you ramble, over-explain, provide background, and sometimes contradict yourself. All of that extra context makes the output dramatically better.</p>
+      </div>
 
-      <p><strong>Step 3: Generate first drafts.</strong> Using the outline Claude produced, ask it to write drafts for each content piece. This is where the context docs become critical. Claude is pulling from the brand guidelines, previous examples, and ICP information to match the client's voice.</p>
+      <div class="step">
+        <div class="step-label">Step 3</div>
+        <p><strong>Generate first drafts.</strong> Using the outline Claude produced, ask it to write drafts for each content piece. This is where the context docs become critical. Claude is pulling from the brand guidelines, previous examples, and ICP information to match the client's voice.</p>
+      </div>
 
-      <p><strong>Step 4: Edit like a mean editor.</strong> This is where the real work happens and where most people skip. You read every draft. You identify every sentence that sounds like generic AI writing. You tell Claude exactly what is wrong: this opening line needs to work without context, this paragraph uses a sentence structure I banned, this CTA points to the wrong page. Multiple rounds. For an important client launch post, this process can take up to an hour for a single LinkedIn post.</p>
+      <div class="step">
+        <div class="step-label">Step 4</div>
+        <p><strong>Edit like a mean editor.</strong> This is where the real work happens and where most people skip. You read every draft. You identify every sentence that sounds like generic AI writing. You tell Claude exactly what is wrong: this opening line needs to work without context, this paragraph uses a sentence structure I banned, this CTA points to the wrong page. Multiple rounds. For an important client launch post, this process can take up to an hour for a single LinkedIn post.</p>
+      </div>
 
       <p>That editing time is not wasted time. It is the entire value proposition. If your agency is delivering first-draft AI output, your clients can do that themselves for $20 a month. The human judgment layer is what they are paying for.</p>
 
@@ -269,6 +461,8 @@
 
       <p>Invest the time in building your context library. For a new client, that means spending a few hours compiling brand docs, writing guidelines, and gathering examples of content that represents the voice you want. For an existing client where you already have all of that, just organize it into a folder and connect it.</p>
 
+      <div class="section-divider"></div>
+
       <h2>What this means for marketers worried about AI</h2>
 
       <p>Something that came up repeatedly during the live session is whether marketers should be concerned about their jobs. Here is our take, and it has stayed consistent across every episode we have done since.</p>
@@ -287,7 +481,12 @@
 
       <p>The actual problem is the same one it has always been: most people are not specific enough. Saying "optimize for engagement" means nothing. Saying "avoid staccato sentences, do not use the word 'bank' because this is a finance startup and the word is confusing in context, and the CTA should drive to a demo page, not a blog post" gets you somewhere useful.</p>
 
-      <p>The specificity of your input determines the quality of your output. That is the whole thing. There is no secret beyond that.</p>
+      <div class="callout">
+        <strong>Key takeaway</strong>
+        The specificity of your input determines the quality of your output. That is the whole thing. There is no secret beyond that.
+      </div>
+
+      <div class="section-divider"></div>
 
       <h2>Claude vs ChatGPT for this specific workflow</h2>
 
@@ -296,6 +495,8 @@
       <p>The biggest improvement: Claude actually maintains context from the docs folder throughout the entire chat. With ChatGPT, even with project files attached, we would constantly have to re-remind it to reference the brand guidelines. By the end of a long content session, ChatGPT would drift from the brand voice and we would have to course-correct. With Claude Cowork and Code, because it is pulling directly from the local context doc folder, that drift does not happen in the same way.</p>
 
       <p>We do not have loyalty to any specific model. We use whatever produces the best work. Right now, for content creation workflows that require sustained context awareness across long sessions, that is Claude.</p>
+
+      <div class="section-divider"></div>
 
       <h2>Resources and tools mentioned</h2>
 

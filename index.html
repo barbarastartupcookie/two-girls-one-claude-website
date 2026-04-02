@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two girls. one Claude. — live build sessions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Two girls. one Claude.</a>
+      <div class="nav-links">
+        <a href="#blog">Blog</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-banner-wrap">
+        <img src="Frame 1000004666.png" alt="Two girls. one Claude. live build sessions" class="hero-banner">
+      </div>
+      <p class="hero-description">
+        We build real products live with Claude and write about what we learn. AI workflows, prompts, and honest lessons from the build.
+      </p>
+      <form class="hero-form" onsubmit="handleSubscribe(event)">
+        <div class="form-row">
+          <input type="email" placeholder="your@email.com" required class="hero-input" />
+          <button type="submit" class="hero-button">Subscribe</button>
+        </div>
+        <p class="form-note">Join the list for weekly event recaps.</p>
+        <p class="form-success" id="formSuccess">You're in. Welcome to the build.</p>
+      </form>
+    </div>
+  </header>
+
+  <!-- BLOG -->
+  <section class="blog" id="blog">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Latest Posts</div>
+        <p class="section-subtitle">Recaps, resources, and raw lessons from our live sessions</p>
+      </div>
+      <div class="blog-grid">
+
+        <a href="blog/episode-1.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-image">
+            <img src="two_girls_one_claude_v3.jpg" alt="Building with Claude">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Episode 1</span>
+            <h3 class="blog-card-title">LinkedIn Lunatics, technical difficulties, and building a content repurposing tool</h3>
+            <p class="blog-card-excerpt">
+              We kicked off our first LinkedIn Live, ended up on r/LinkedInLunatics, and built a content repurposing tool from scratch.
+            </p>
+            <span class="blog-card-date">March 17, 2026</span>
+          </div>
+        </article>
+        </a>
+
+        <article class="blog-card">
+          <div class="blog-card-image">
+            <img src="two_girls_one_claude_v4.jpg" alt="AI Workflows">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Workflow</span>
+            <h3 class="blog-card-title">The prompting framework we use for every new project</h3>
+            <p class="blog-card-excerpt">
+              A repeatable system for going from idea to working prototype using Claude as your build partner.
+            </p>
+            <span class="blog-card-date">March 2026</span>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-image">
+            <img src="two_girls_one_claude_v2.jpg" alt="Live Sessions">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Lessons</span>
+            <h3 class="blog-card-title">What we learned after 30 days of building with AI</h3>
+            <p class="blog-card-excerpt">
+              Honest takeaways from a month of daily live sessions. The breakthroughs and the frustrations.
+            </p>
+            <span class="blog-card-date">Coming Soon</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / MEET THE GIRLS -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Meet the Girls</div>
+      </div>
+      <div class="about-grid">
+
+        <div class="about-card">
+          <div class="about-photo">
+            <img src="NEW Barbara.jpg" alt="Barbara">
+          </div>
+          <div class="about-info">
+            <h3 class="about-name">Barbara</h3>
+            <p class="about-role">Builder & Strategist</p>
+            <p class="about-bio">
+              The one who says "let's just ship it." Runs an AI agency, builds workflows with Claude daily, and brings product thinking to every live session.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-photo">
+            <img src="NEWEST Bojana.png" alt="Bojana">
+          </div>
+          <div class="about-info">
+            <h3 class="about-name">Bojana</h3>
+            <p class="about-role">Creative & Builder</p>
+            <p class="about-bio">
+              The one who makes sure it actually looks good. Turns AI outputs into polished products and keeps the quality bar high.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-rule"></div>
+      <p class="footer-logo">Two girls. one Claude.</p>
+      <p class="footer-sub">— live build sessions —</p>
+      <p class="footer-copy">&copy; 2026 Two girls. one Claude. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    async function handleSubscribe(e) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input').value;
+      const button = form.querySelector('button');
+      const success = document.getElementById('formSuccess');
+
+      button.disabled = true;
+      button.textContent = '...';
+
+      try {
+        const res = await fetch('https://twogirlsoneclaude.com/api/v1/free', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            first_url: 'https://twogirlsoneclaude.com/',
+            source: 'embed'
+          })
+        });
+
+        if (res.ok) {
+          success.textContent = "You're in. Check your inbox.";
+          success.classList.add('visible');
+          form.querySelector('input').value = '';
+        } else {
+          success.textContent = 'Something went wrong. Try again.';
+          success.classList.add('visible');
+        }
+      } catch (err) {
+        // CORS fallback: open Substack subscribe page directly
+        window.open('https://twogirlsoneclaude.com/subscribe?simple=true&email=' + encodeURIComponent(email), '_blank');
+        success.textContent = 'Finishing signup in a new tab.';
+        success.classList.add('visible');
+        form.querySelector('input').value = '';
+      }
+
+      button.disabled = false;
+      button.textContent = 'Subscribe';
+      setTimeout(() => success.classList.remove('visible'), 5000);
+    }
+  </script>
+
+</body>
+</html>

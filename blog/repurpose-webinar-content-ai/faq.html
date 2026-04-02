@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ: Repurpose Webinar Content with AI | Two girls, one Claude</title>
+  <meta name="description" content="Frequently asked questions about using AI to repurpose webinar content. Covers content types, quality concerns, copyright, scaling, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=2">
+  <style>
+    .post {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+
+    .post-meta {
+      margin-bottom: 2.5rem;
+    }
+
+    .post-tag {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--red-muted);
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .post-title {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-top: 1rem;
+    }
+
+    .post-byline {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-top: 0.75rem;
+    }
+
+    .post-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--red);
+      margin-top: 1.5rem;
+    }
+
+    .post-body {
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .post-body p {
+      margin-bottom: 1.4rem;
+    }
+
+    .post-body a {
+      color: var(--red);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .post-body a:hover {
+      color: var(--red-light);
+    }
+
+    .post-back {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+
+    .post-back:hover {
+      color: var(--red);
+    }
+
+    .post-back::before {
+      content: "\2190\00a0";
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.75rem 0;
+    }
+
+    .faq-item:first-child {
+      padding-top: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-answer {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .faq-answer ul {
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+      padding-left: 1.5rem;
+    }
+
+    .faq-answer li {
+      margin-bottom: 0.4rem;
+      line-height: 1.7;
+    }
+
+    .faq-workflow-link {
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .faq-workflow-link p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .faq-workflow-link a {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    .faq-workflow-link a:hover {
+      text-decoration: underline;
+    }
+
+    .post-cta {
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .post-cta-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-cta-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .post {
+        padding: 2.5rem 1.5rem 4rem;
+      }
+
+      .post-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many content pieces can you realistically get from one webinar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From a one-hour webinar with substantive discussion, you can typically produce 5 or more LinkedIn posts, 2 to 3 long-form blog articles, 1 newsletter recap, a 3 to 5 email follow-up sequence, and 2 to 3 short-form video script outlines. Webinars with surface-level conversation will produce less."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will the AI-generated content sound robotic or generic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you skip the context docs and editing rounds, yes. The output quality depends entirely on two things: how much brand context you feed the AI before starting, and how many editing rounds you do afterward. With a well-built context library and 2 to 3 rounds of human editing, the output is indistinguishable from manually written content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I repurpose webinar content with AI if I don't have a transcript?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You need a transcript. Most webinar platforms like Zoom and Riverside generate transcripts automatically. If yours does not, you can use transcription services like Otter.ai or Rev to create one from the recording. The transcript does not need to be clean or edited. Raw, messy transcripts work fine."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it legal to repurpose webinar content into blog posts and social media?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you hosted the webinar, you own the content and can repurpose it however you want. If you were a guest on someone else's webinar, check the terms of your appearance. Most webinar hosts are happy for guests to repurpose their own contributions, but it is worth confirming. The AI is not creating new content from scratch. It is restructuring content you already own."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work for podcast episodes and video content too?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Any long-form audio or video content with a transcript can be repurposed using the same workflow. Podcast episodes, YouTube videos, conference talks, internal training sessions, customer interviews. The process is identical: get a transcript, connect your context docs, extract ideas, generate drafts, edit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does this workflow take compared to doing it manually?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The manual AI-assisted workflow takes 3 to 4 hours for a full content package. The automated tool version takes 20 to 30 minutes to generate plus 1 to 2 hours of editing. A content team doing this entirely from scratch without AI typically takes 2 to 3 full days for the same output."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-logo">Two girls, one Claude</a>
+      <div class="nav-links">
+        <a href="../../blog/">Workflows</a>
+        <a href="../../index.html#about">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="post">
+    <a href="./" class="post-back">Back to workflow</a>
+
+    <div class="post-meta">
+      <span class="post-tag">FAQ</span>
+      <h1 class="post-title">Repurpose webinar content with AI: frequently asked questions</h1>
+      <p class="post-byline">Updated March 17, 2026</p>
+      <div class="post-rule"></div>
+    </div>
+
+    <div class="post-body">
+
+      <div class="faq-item">
+        <h2 class="faq-question">How many content pieces can you realistically get from one webinar?</h2>
+        <div class="faq-answer">
+          <p>It depends on the depth of the conversation. A one-hour webinar where speakers go deep on specific topics and share concrete examples will produce significantly more than a webinar that stays at a high level. From a strong webinar, we routinely pull 10 or more individual content assets. From a weaker one, sometimes only 2 to 3 pieces are worth publishing. Trying to force content from a surface-level conversation is how you end up with generic posts that nobody engages with.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">Will the AI-generated content sound robotic or generic?</h2>
+        <div class="faq-answer">
+          <p>That depends entirely on you. The AI produces what you set it up to produce. If you hand it a transcript with no brand guidelines, no tone of voice documentation, and no examples of previous content, yes, the output will sound like every other AI-generated LinkedIn post. If you spend the time building a context library with writing style docs, ICP information, and examples of content the brand has published before, the output is a completely different quality level. The AI is only as good as the context it has to work with.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">Can I use this workflow if I don't have a transcript?</h2>
+        <div class="faq-answer">
+          <p>You need a transcript. That is the source material. Most recording platforms generate them automatically (Zoom, Riverside, Google Meet all have this built in). If yours does not, run the recording through a transcription service like Otter.ai, Rev, or even just upload the audio file to Claude and ask it to transcribe. The transcript does not need to be polished. Timestamps, speaker labels, filler words, none of that matters. Raw is fine.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">Is it legal to repurpose webinar content into social media posts and articles?</h2>
+        <div class="faq-answer">
+          <p>If you hosted the webinar, you own the content. Repurpose it however you want. If you were a guest speaker, check the terms of your appearance, but most hosts are happy for guests to repurpose their own contributions since it extends the reach of the webinar. The AI is not generating new ideas from nothing. It is restructuring and reformatting content that already exists in your transcript. The intellectual property is yours.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">Does this work for podcast episodes, YouTube videos, and conference talks?</h2>
+        <div class="faq-answer">
+          <p>Yes. Any long-form content that produces a transcript works with this exact workflow. We have used it for podcast episodes, YouTube interviews, internal all-hands recordings, customer discovery calls, and conference keynotes. The format of the original content does not matter. What matters is that you have spoken words captured in a transcript, and that those words contain ideas worth repurposing.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">What if the webinar had multiple speakers with different companies?</h2>
+        <div class="faq-answer">
+          <p>You can repurpose the content from your own speakers without issue. For guest speakers from other companies, it is good practice to let them know you are repurposing their quotes or insights, especially if you are attributing specific statements to them publicly. Most guests will appreciate the additional exposure. If you want to be safe, share the drafts with them before publishing. This also has the benefit of them being more likely to reshare the content since they were involved in approving it.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">Can I use ChatGPT instead of Claude for this?</h2>
+        <div class="faq-answer">
+          <p>You can use any large language model. The workflow itself is model-agnostic. We switched from ChatGPT to Claude because Claude maintains context from local files more reliably during long content sessions. ChatGPT with project files would drift from brand guidelines by the end of a 20-post batch, requiring constant re-prompting. That specific problem is why we moved. If you already have a working setup with ChatGPT and it holds context well enough for your needs, the same prompts and process will work.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">How do I handle webinars in languages other than English?</h2>
+        <div class="faq-answer">
+          <p>Claude and most major language models handle multilingual content well. You can feed in a transcript in one language and ask for output in another, or keep everything in the original language. If your audience is multilingual, you can generate the same content package in multiple languages from a single transcript. The context docs (brand guidelines, tone of voice) should be in the target output language for best results.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">What happens if my webinar transcript is really long (2+ hours)?</h2>
+        <div class="faq-answer">
+          <p>Longer transcripts produce more raw material, which is a good thing. The idea extraction step becomes more important because you need to filter down to the most valuable insights rather than trying to repurpose everything. For transcripts over 15,000 words, consider breaking the extraction step into segments (first hour, second hour) so the AI can focus on each section with full attention rather than trying to process the entire document at once.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">Can a team of people use this workflow or is it just for solo marketers?</h2>
+        <div class="faq-answer">
+          <p>Teams can absolutely use this. The workflow is the same regardless of whether one person is doing everything or a team is dividing responsibilities. In a team setting, one person typically handles the transcript upload and idea extraction, then distributes the content outlines to different team members for draft generation and editing. The context doc folder can be shared via a team drive. The automated tool version is especially useful for teams because it produces a Google Doc that multiple people can edit simultaneously.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">How often should I update my context docs?</h2>
+        <div class="faq-answer">
+          <p>Every time you publish a batch of content that the client or stakeholder responds positively to, add those pieces to the context folder. Every time you get feedback that something was off-brand or missed the mark, update the writing guidelines with a specific note about what to avoid. The context library is a living document. The teams that update it after every content cycle get noticeably better output within a month. The ones who set it up once and never touch it see diminishing returns.</p>
+        </div>
+      </div>
+
+      <div class="faq-workflow-link">
+        <p>Ready to build this workflow?</p>
+        <a href="./">View the full workflow guide &rarr;</a>
+      </div>
+
+      <div class="post-cta">
+        <p class="post-cta-title">Want more like this?</p>
+        <p class="post-cta-text">One email per week. Recaps, prompts, and lessons from every live session.</p>
+        <form class="hero-form" onsubmit="handleSubscribe(event)">
+          <div class="form-row">
+            <input type="email" placeholder="your@email.com" required class="hero-input" />
+            <button type="submit" class="hero-button">Subscribe</button>
+          </div>
+          <p class="form-success" id="formSuccess">You're in. Check your inbox.</p>
+        </form>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-rule"></div>
+      <p class="footer-logo">Two girls, one Claude</p>
+      <p class="footer-sub">&mdash; live build sessions &mdash;</p>
+      <p class="footer-copy">&copy; 2026 Two girls, one Claude All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    async function handleSubscribe(e) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input').value;
+      const button = form.querySelector('button');
+      const success = document.getElementById('formSuccess');
+
+      button.disabled = true;
+      button.textContent = '...';
+
+      try {
+        const res = await fetch('https://twogirlsoneclaude.substack.com/api/v1/free', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            first_url: 'https://twogirlsoneclaude.substack.com/',
+            source: 'embed'
+          })
+        });
+
+        if (res.ok) {
+          success.textContent = "You're in. Check your inbox.";
+          success.classList.add('visible');
+          form.querySelector('input').value = '';
+        } else {
+          success.textContent = 'Something went wrong. Try again.';
+          success.classList.add('visible');
+        }
+      } catch (err) {
+        window.open('https://twogirlsoneclaude.substack.com/subscribe?simple=true&email=' + encodeURIComponent(email), '_blank');
+        success.textContent = 'Finishing signup in a new tab.';
+        success.classList.add('visible');
+        form.querySelector('input').value = '';
+      }
+
+      button.disabled = false;
+      button.textContent = 'Subscribe';
+      setTimeout(() => success.classList.remove('visible'), 5000);
+    }
+  </script>
+
+</body>
+</html>

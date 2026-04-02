@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Repurpose Webinar Content with AI (Our Full Workflow) | Two girls. one Claude.</title>
+  <meta name="description" content="A step-by-step breakdown of how we use Claude to turn a single webinar transcript into LinkedIn posts, blog articles, emails, and video scripts. Built live on our first LinkedIn Live.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=2">
+  <style>
+    .post {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+
+    .post-meta {
+      margin-bottom: 2.5rem;
+    }
+
+    .post-tag {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--red-muted);
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .post-title {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-top: 1rem;
+    }
+
+    .post-byline {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-top: 0.75rem;
+    }
+
+    .post-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--red);
+      margin-top: 1.5rem;
+    }
+
+    .post-body {
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .post-body p {
+      margin-bottom: 1.4rem;
+    }
+
+    .post-body h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .post-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--red);
+    }
+
+    .post-body ul {
+      margin-bottom: 1.4rem;
+      padding-left: 1.5rem;
+    }
+
+    .post-body li {
+      margin-bottom: 0.5rem;
+      line-height: 1.75;
+    }
+
+    .post-body strong {
+      font-weight: 700;
+    }
+
+    .post-body a {
+      color: var(--red);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .post-body a:hover {
+      color: var(--red-light);
+    }
+
+    .post-body blockquote {
+      border-left: 3px solid var(--red);
+      padding-left: 1.25rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .post-body img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin: 1.5rem 0;
+    }
+
+    .post-cta {
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .post-cta-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-cta-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .post-back {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+
+    .post-back:hover {
+      color: var(--red);
+    }
+
+    .post-back::before {
+      content: "\2190\00a0";
+    }
+
+    @media (max-width: 768px) {
+      .post {
+        padding: 2.5rem 1.5rem 4rem;
+      }
+
+      .post-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Two girls. one Claude.</a>
+      <div class="nav-links">
+        <a href="../index.html#blog">Blog</a>
+        <a href="../index.html#about">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- POST -->
+  <article class="post">
+    <a href="../index.html#blog" class="post-back">All posts</a>
+
+    <div class="post-meta">
+      <span class="post-tag">Episode 1</span>
+      <h1 class="post-title">How to repurpose webinar content with AI: the full workflow we use for clients</h1>
+      <p class="post-byline">Barbara &amp; Bojana &middot; March 17, 2026</p>
+      <div class="post-rule"></div>
+    </div>
+
+    <div class="post-body">
+
+      <p>Our first LinkedIn Live started 15 minutes late because LinkedIn's streaming tools decided not to cooperate. We ended up on r/LinkedInLunatics within the first hour for our series title alone. And somewhere in the middle of all that, we walked through the exact workflow we use at our agency to repurpose a single webinar into weeks of content across LinkedIn, email, and blog.</p>
+
+      <p>This post is going to break down that workflow in full. Not the vibes recap (that lives on <a href="https://twogirlsoneclaude.substack.com">our Substack</a>). This is the operational breakdown: what we connect, what we feed it, what the output looks like, and where humans still need to step in.</p>
+
+      <p>If you run webinars for your company or your clients and you are still manually writing LinkedIn posts, blog articles, and follow-up emails from scratch after each one, this is going to save you a significant amount of time every single month.</p>
+
+      <h2>Why webinar content is the single best thing to repurpose with AI</h2>
+
+      <p>A webinar transcript is one of the richest source documents you can hand to an AI. An hour-long webinar produces 8,000 to 12,000 words of real conversation between real people talking about real problems. That is substantially more raw material than a typical blog post outline or a content brief.</p>
+
+      <p>The content is also inherently original because it came from a live discussion. Nobody else has this exact conversation. Nobody else can replicate the specific insights your speakers shared. That makes it fundamentally different from asking AI to write a blog post from a generic topic prompt, where you are competing with every other person who asked the same thing.</p>
+
+      <p>The challenge has always been time. Turning a one-hour webinar into five LinkedIn posts, two blog articles, a newsletter recap, an email follow-up sequence, and short-form video scripts takes a content team days. By the time all of that is published, the momentum from the live event is gone and your attendees have already forgotten about it.</p>
+
+      <p>That is the problem we solved. Not by cutting corners on quality, but by building a workflow that gets you from raw transcript to polished, multi-format content in hours instead of days.</p>
+
+      <h2>The two approaches: manual and automated</h2>
+
+      <p>During the live session, we showed two distinct methods. Understanding when to use each one is important because they serve different purposes and produce different quality levels.</p>
+
+      <h3>The manual approach (higher quality, more time)</h3>
+
+      <p>This is what Barbara does for most agency clients, and it is the approach we recommend if content quality is your primary concern.</p>
+
+      <p>The setup starts with a context doc folder. Every client at our agency has a dedicated folder on the local machine that contains everything Claude needs to understand the brand. This folder gets connected to Claude Cowork or Code at the beginning of every content session.</p>
+
+      <p>That folder contains:</p>
+      <ul>
+        <li><strong>Brand and writing guidelines</strong> with a documented tone of voice, a list of phrases to avoid, and formatting rules. For example, our guidelines explicitly ban em dashes, staccato sentence structures, passive voice where active works, and overused AI words like "shift," "gap," and "leap."</li>
+        <li><strong>ICP documentation</strong> describing who you are writing for, in as much detail as possible. Job titles, company sizes, industries, the problems they are trying to solve, the language they use internally.</li>
+        <li><strong>Previous content that performed well.</strong> Social posts, blog posts, emails, anything that demonstrates what good output looks like for this specific brand.</li>
+        <li><strong>Presentation decks and sales materials.</strong> Anything with the company's visual branding. This is particularly valuable because it gives Claude reference material for creating social media graphics that actually look on-brand.</li>
+        <li><strong>Product info, competitor positioning, demo transcripts.</strong> The more context the model has, the more specific and relevant the output will be.</li>
+      </ul>
+
+      <p>Clients we have worked with for years get substantially better output than new clients because that context library has had time to grow. This is the actual competitive advantage. The tool itself is table stakes. The accumulated context is what makes the output usable.</p>
+
+      <p>Once the folder is connected, the workflow goes like this:</p>
+
+      <p><strong>Step 1: Upload the raw transcript.</strong> Download it directly from your webinar platform (we use Riverside). Do not clean it up. Do not edit it. Feed it in raw. Claude handles messy transcripts without issue.</p>
+
+      <p><strong>Step 2: Ask Claude to outline the most engaging and insightful ideas.</strong> The prompt here is conversational, not formulaic. Barbara uses a voice transcription tool (Wispr) instead of typing, and the reason is counterintuitive: when you type, you self-edit. You trim. You filter out context that the AI actually needs. When you speak, you ramble, over-explain, provide background, and sometimes contradict yourself. All of that extra context makes the output dramatically better.</p>
+
+      <p><strong>Step 3: Generate first drafts.</strong> Using the outline Claude produced, ask it to write drafts for each content piece. This is where the context docs become critical. Claude is pulling from the brand guidelines, previous examples, and ICP information to match the client's voice.</p>
+
+      <p><strong>Step 4: Edit like a mean editor.</strong> This is where the real work happens and where most people skip. You read every draft. You identify every sentence that sounds like generic AI writing. You tell Claude exactly what is wrong: this opening line needs to work without context, this paragraph uses a sentence structure I banned, this CTA points to the wrong page. Multiple rounds. For an important client launch post, this process can take up to an hour for a single LinkedIn post.</p>
+
+      <p>That editing time is not wasted time. It is the entire value proposition. If your agency is delivering first-draft AI output, your clients can do that themselves for $20 a month. The human judgment layer is what they are paying for.</p>
+
+      <h3>The automated approach (faster, good baseline)</h3>
+
+      <p>For situations where you need speed over perfection, or when you want a starting point that gets you 70% of the way there, we built a tool in Claude Code that automates a stripped-down version of the manual workflow.</p>
+
+      <p>Here is how it was built: Barbara took one of her full manual content creation sessions (the entire chat history of going from raw transcript to finished posts), told Claude to summarize the workflow, and then asked Claude Code to turn that summary into a tool. The build took about two to three hours. Neither of us writes code.</p>
+
+      <p>The tool accepts a webinar transcript as input and generates a Google Doc containing LinkedIn posts, a newsletter recap, short-form video scripts, and email follow-up sequences. You can customize what it produces by editing the configuration.</p>
+
+      <p>The output quality from the automated tool is decent but not agency-grade. It works well as a first pass. You will still want a human reviewing everything before it goes live, but you are starting from a much better position than a blank page.</p>
+
+      <h2>The one thing most people get wrong about AI content workflows</h2>
+
+      <p>The most common mistake we see is people treating the AI tool as the solution when it is actually just the last mile. The real work happens before you ever open Claude.</p>
+
+      <p>If you download our markdown file, load it into Claude Code, build the tool, and then paste in a transcript with zero context docs, you will get mediocre output. That is not the tool failing. That is you skipping the foundational work that makes the output good.</p>
+
+      <p>This is the same as hiring a freelance writer, giving them no brief, no brand guidelines, no examples of what you like, and then being frustrated when the first draft misses the mark.</p>
+
+      <p>Invest the time in building your context library. For a new client, that means spending a few hours compiling brand docs, writing guidelines, and gathering examples of content that represents the voice you want. For an existing client where you already have all of that, just organize it into a folder and connect it.</p>
+
+      <h2>What this means for marketers worried about AI</h2>
+
+      <p>Something that came up repeatedly during the live session is whether marketers should be concerned about their jobs. Here is our take, and it has stayed consistent across every episode we have done since.</p>
+
+      <p>The marketers who should be worried are the ones who were already producing mediocre work and relying on volume over quality. If you were the person who wrote generic blog posts by rewording the first page of Google results, yes, AI does that faster and cheaper now.</p>
+
+      <p>If your value was always in your judgment, your understanding of a specific audience, your ability to look at a piece of content and know instinctively whether it works or not, you are in a stronger position than you have ever been. Because now you can apply that judgment at a speed and scale that was not possible before.</p>
+
+      <p>The job is taste now. Knowing what sounds right, what a specific audience needs to hear, what the difference is between technically correct copy and copy that actually makes someone stop scrolling. That is the moat. AI cannot replicate taste. It can only amplify it.</p>
+
+      <h2>A note on prompting: stop overthinking it</h2>
+
+      <p>We kept hearing from attendees that they freeze when they open Claude Code or Cowork because they think they need special prompt engineering syntax. They think there is some secret format or magic words that will unlock better results.</p>
+
+      <p>There is not. You just talk to it. If you have ever given a brief to a freelancer, explained a project to a new team member, or left comments on a Google Doc, you already know how to prompt AI.</p>
+
+      <p>The actual problem is the same one it has always been: most people are not specific enough. Saying "optimize for engagement" means nothing. Saying "avoid staccato sentences, do not use the word 'bank' because this is a finance startup and the word is confusing in context, and the CTA should drive to a demo page, not a blog post" gets you somewhere useful.</p>
+
+      <p>The specificity of your input determines the quality of your output. That is the whole thing. There is no secret beyond that.</p>
+
+      <h2>Claude vs ChatGPT for this specific workflow</h2>
+
+      <p>We used ChatGPT exclusively through 2025. We switched to Claude in 2026 and the difference for content workflows specifically is substantial.</p>
+
+      <p>The biggest improvement: Claude actually maintains context from the docs folder throughout the entire chat. With ChatGPT, even with project files attached, we would constantly have to re-remind it to reference the brand guidelines. By the end of a long content session, ChatGPT would drift from the brand voice and we would have to course-correct. With Claude Cowork and Code, because it is pulling directly from the local context doc folder, that drift does not happen in the same way.</p>
+
+      <p>We do not have loyalty to any specific model. We use whatever produces the best work. Right now, for content creation workflows that require sustained context awareness across long sessions, that is Claude.</p>
+
+      <h2>Resources and tools mentioned</h2>
+
+      <ul>
+        <li><strong>Claude Cowork and Claude Code</strong> (requires the desktop app, not the browser version)</li>
+        <li><strong>Wispr</strong> for voice transcription instead of typing prompts</li>
+        <li><strong>Riverside</strong> for webinar recording and transcript downloads</li>
+        <li><strong>The markdown file for the automated tool</strong> (subscribe to <a href="https://twogirlsoneclaude.substack.com">our Substack</a> where we shared it in the Episode 1 recap)</li>
+      </ul>
+
+      <h2>Watch the full episode</h2>
+
+      <p>The full recording of this LinkedIn Live, including the technical difficulties and the parts where we argue about the show name, is available on our YouTube channel.</p>
+
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/foHFzAREkkk" title="Two girls one Claude - Episode 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 6px; margin: 1.5rem 0;"></iframe>
+
+      <!-- CTA -->
+      <div class="post-cta">
+        <p class="post-cta-title">Want more like this?</p>
+        <p class="post-cta-text">One email per week. Recaps, prompts, and lessons from every live session.</p>
+        <form class="hero-form" onsubmit="handleSubscribe(event)">
+          <div class="form-row">
+            <input type="email" placeholder="your@email.com" required class="hero-input" />
+            <button type="submit" class="hero-button">Subscribe</button>
+          </div>
+          <p class="form-success" id="formSuccess">You're in. Check your inbox.</p>
+        </form>
+      </div>
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-rule"></div>
+      <p class="footer-logo">Two girls. one Claude.</p>
+      <p class="footer-sub">— live build sessions —</p>
+      <p class="footer-copy">&copy; 2026 Two girls. one Claude. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    async function handleSubscribe(e) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input').value;
+      const button = form.querySelector('button');
+      const success = document.getElementById('formSuccess');
+
+      button.disabled = true;
+      button.textContent = '...';
+
+      try {
+        const res = await fetch('https://twogirlsoneclaude.substack.com/api/v1/free', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            first_url: 'https://twogirlsoneclaude.substack.com/',
+            source: 'embed'
+          })
+        });
+
+        if (res.ok) {
+          success.textContent = "You're in. Check your inbox.";
+          success.classList.add('visible');
+          form.querySelector('input').value = '';
+        } else {
+          success.textContent = 'Something went wrong. Try again.';
+          success.classList.add('visible');
+        }
+      } catch (err) {
+        window.open('https://twogirlsoneclaude.substack.com/subscribe?simple=true&email=' + encodeURIComponent(email), '_blank');
+        success.textContent = 'Finishing signup in a new tab.';
+        success.classList.add('visible');
+        form.querySelector('input').value = '';
+      }
+
+      button.disabled = false;
+      button.textContent = 'Subscribe';
+      setTimeout(() => success.classList.remove('visible'), 5000);
+    }
+  </script>
+
+</body>
+</html>

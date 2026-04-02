@@ -372,140 +372,219 @@
 
     <div class="post-body">
 
-      <p>Our first LinkedIn Live started 15 minutes late because LinkedIn's streaming tools decided not to cooperate. We ended up on r/LinkedInLunatics within the first hour for our series title alone. And somewhere in the middle of all that, we walked through the exact workflow we use at our agency to repurpose a single webinar into weeks of content across LinkedIn, email, and blog.</p>
-
-      <img src="linkedin-lunatics.png" alt="Bojana's text message: Huston, we have a problem with a tagline hahaha">
-
-      <p>This post is going to break down that workflow in full. Not the vibes recap (that lives on <a href="https://twogirlsoneclaude.substack.com">our Substack</a>). This is the operational breakdown: what we connect, what we feed it, what the output looks like, and where humans still need to step in.</p>
-
-      <p>If you run webinars for your company or your clients and you are still manually writing LinkedIn posts, blog articles, and follow-up emails from scratch after each one, this is going to save you a significant amount of time every single month.</p>
+      <p>Turn a single webinar transcript into weeks of multi-channel content using Claude Cowork and Claude Code. Upload a raw transcript, connect your brand context docs, and generate LinkedIn posts, blog articles, newsletter recaps, email sequences, and short-form video scripts, all in your brand voice. Includes both a manual high-quality workflow and an automated tool you can build yourself in 2 to 3 hours.</p>
 
       <iframe width="100%" height="400" src="https://www.youtube.com/embed/foHFzAREkkk" title="Two girls one Claude - Episode 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 6px; margin: 1.5rem 0;"></iframe>
 
-      <h2>Why webinar content is the single best thing to repurpose with AI</h2>
+      <div class="section-divider"></div>
 
-      <p>A webinar transcript is one of the richest source documents you can hand to an AI. An hour-long webinar produces 8,000 to 12,000 words of real conversation between real people talking about real problems. That is substantially more raw material than a typical blog post outline or a content brief.</p>
+      <h2>Workflow Description</h2>
 
-      <p>The content is also inherently original because it came from a live discussion. Nobody else has this exact conversation. Nobody else can replicate the specific insights your speakers shared. That makes it fundamentally different from asking AI to write a blog post from a generic topic prompt, where you are competing with every other person who asked the same thing.</p>
+      <p>This workflow takes a raw, unedited webinar transcript and repurposes it into a full content package across multiple formats and channels. The system uses Claude's context doc folder to maintain brand voice consistency across every output.</p>
 
-      <p>The challenge has always been time. Turning a one-hour webinar into five LinkedIn posts, two blog articles, a newsletter recap, an email follow-up sequence, and short-form video scripts takes a content team days. By the time all of that is published, the momentum from the live event is gone and your attendees have already forgotten about it.</p>
+      <p>There are two versions: a manual process where you work directly with Claude Cowork through multiple editing rounds (higher quality, used for client work), and an automated tool built in Claude Code that generates a Google Doc with all content types in one pass (faster, used as a starting point).</p>
 
-      <p>That is the problem we solved. Not by cutting corners on quality, but by building a workflow that gets you from raw transcript to polished, multi-format content in hours instead of days.</p>
+      <p>An hour-long webinar produces 8,000 to 12,000 words of original, conversational content. That is substantially more raw material than a blog outline or content brief, and it is inherently original because it came from a live discussion that nobody else can replicate.</p>
+
+      <img src="linkedin-lunatics.png" alt="Bojana's text message: Huston, we have a problem with a tagline hahaha">
 
       <div class="section-divider"></div>
 
-      <h2>The two approaches: manual and automated</h2>
+      <h2>Before You Begin</h2>
 
-      <p>During the live session, we showed two distinct methods. Understanding when to use each one is important because they serve different purposes and produce different quality levels.</p>
-
-      <h3>The manual approach (higher quality, more time)</h3>
-
-      <p>This is what Barbara does for most agency clients, and it is the approach we recommend if content quality is your primary concern.</p>
-
-      <p>The setup starts with a context doc folder. Every client at our agency has a dedicated folder on the local machine that contains everything Claude needs to understand the brand. This folder gets connected to Claude Cowork or Code at the beginning of every content session.</p>
-
-      <p>That folder contains:</p>
+      <h3>Tools you'll need open</h3>
       <ul>
-        <li><strong>Brand and writing guidelines</strong> with a documented tone of voice, a list of phrases to avoid, and formatting rules. For example, our guidelines explicitly ban em dashes, staccato sentence structures, passive voice where active works, and overused AI words like "shift," "gap," and "leap."</li>
-        <li><strong>ICP documentation</strong> describing who you are writing for, in as much detail as possible. Job titles, company sizes, industries, the problems they are trying to solve, the language they use internally.</li>
-        <li><strong>Previous content that performed well.</strong> Social posts, blog posts, emails, anything that demonstrates what good output looks like for this specific brand.</li>
-        <li><strong>Presentation decks and sales materials.</strong> Anything with the company's visual branding. This is particularly valuable because it gives Claude reference material for creating social media graphics that actually look on-brand.</li>
-        <li><strong>Product info, competitor positioning, demo transcripts.</strong> The more context the model has, the more specific and relevant the output will be.</li>
+        <li><a href="https://claude.ai/download">Claude Desktop App</a> (Cowork or Code, not the browser version)</li>
+        <li><a href="https://www.wispr.flow/">Wispr</a> or another voice transcription tool (optional but recommended)</li>
+        <li><a href="https://riverside.fm/">Riverside</a>, Zoom, or any webinar platform that exports transcripts</li>
+        <li>Google Docs (for the automated tool output)</li>
       </ul>
 
-      <p>Clients we have worked with for years get substantially better output than new clients because that context library has had time to grow. This is the actual competitive advantage. The tool itself is table stakes. The accumulated context is what makes the output usable.</p>
+      <h3>What you'll need before starting</h3>
+      <ul>
+        <li><strong>A raw webinar transcript</strong> downloaded directly from your recording platform. Do not clean it up or edit it. Claude handles messy transcripts without issue.</li>
+        <li><strong>A context doc folder</strong> on your local machine containing: brand and writing guidelines, ICP documentation, previous content examples, presentation decks or sales materials with branding, product info and competitor positioning.</li>
+        <li><strong>A "don't do this" list</strong> for your AI writing. Ours bans em dashes, staccato sentences, passive voice where active works, and overused AI words like "shift," "gap," and "leap."</li>
+      </ul>
 
-      <p>Once the folder is connected, the workflow goes like this:</p>
-
-      <div class="step">
-        <div class="step-label">Step 1</div>
-        <p><strong>Upload the raw transcript.</strong> Download it directly from your webinar platform (we use Riverside). Do not clean it up. Do not edit it. Feed it in raw. Claude handles messy transcripts without issue.</p>
+      <div class="callout">
+        <strong>Why context docs matter</strong>
+        Clients we have worked with for years get substantially better output than new clients because the context library has had time to grow. The tool is table stakes. The accumulated context is what makes the output usable.
       </div>
 
-      <div class="step">
-        <div class="step-label">Step 2</div>
-        <p><strong>Ask Claude to outline the most engaging and insightful ideas.</strong> The prompt here is conversational, not formulaic. Barbara uses a voice transcription tool (Wispr) instead of typing, and the reason is counterintuitive: when you type, you self-edit. You trim. You filter out context that the AI actually needs. When you speak, you ramble, over-explain, provide background, and sometimes contradict yourself. All of that extra context makes the output dramatically better.</p>
-      </div>
+      <div class="section-divider"></div>
 
-      <div class="step">
-        <div class="step-label">Step 3</div>
-        <p><strong>Generate first drafts.</strong> Using the outline Claude produced, ask it to write drafts for each content piece. This is where the context docs become critical. Claude is pulling from the brand guidelines, previous examples, and ICP information to match the client's voice.</p>
-      </div>
+      <h2>How It Works</h2>
 
-      <div class="step">
-        <div class="step-label">Step 4</div>
-        <p><strong>Edit like a mean editor.</strong> This is where the real work happens and where most people skip. You read every draft. You identify every sentence that sounds like generic AI writing. You tell Claude exactly what is wrong: this opening line needs to work without context, this paragraph uses a sentence structure I banned, this CTA points to the wrong page. Multiple rounds. For an important client launch post, this process can take up to an hour for a single LinkedIn post.</p>
-      </div>
+      <p>The manual workflow follows four stages. Each stage feeds into the next and requires human judgment at every transition.</p>
 
-      <p>That editing time is not wasted time. It is the entire value proposition. If your agency is delivering first-draft AI output, your clients can do that themselves for $20 a month. The human judgment layer is what they are paying for.</p>
+      <p><strong>Transcript upload</strong> &rarr; <strong>Idea extraction</strong> &rarr; <strong>Draft generation</strong> &rarr; <strong>Multi-round editing</strong> &rarr; <strong>Final content package</strong></p>
 
-      <h3>The automated approach (faster, good baseline)</h3>
-
-      <p>For situations where you need speed over perfection, or when you want a starting point that gets you 70% of the way there, we built a tool in Claude Code that automates a stripped-down version of the manual workflow.</p>
-
-      <p>Here is how it was built: Barbara took one of her full manual content creation sessions (the entire chat history of going from raw transcript to finished posts), told Claude to summarize the workflow, and then asked Claude Code to turn that summary into a tool. The build took about two to three hours. Neither of us writes code.</p>
-
-      <p>The tool accepts a webinar transcript as input and generates a Google Doc containing LinkedIn posts, a newsletter recap, short-form video scripts, and email follow-up sequences. You can customize what it produces by editing the configuration.</p>
+      <p>The automated version compresses all of this into a single tool that accepts a transcript and outputs a Google Doc. The quality trade-off is real: the automated version gets you about 70% of the way there. The manual process, with a human editing each draft, gets you to publishable.</p>
 
       <img src="tool-screenshot.png" alt="Screenshot of the Webinar Content Engine tool built in Claude Code">
 
-      <p>The output quality from the automated tool is decent but not agency-grade. It works well as a first pass. You will still want a human reviewing everything before it goes live, but you are starting from a much better position than a blank page.</p>
-
-      <h2>The one thing most people get wrong about AI content workflows</h2>
-
-      <p>The most common mistake we see is people treating the AI tool as the solution when it is actually just the last mile. The real work happens before you ever open Claude.</p>
-
-      <p>If you download our markdown file, load it into Claude Code, build the tool, and then paste in a transcript with zero context docs, you will get mediocre output. That is not the tool failing. That is you skipping the foundational work that makes the output good.</p>
-
-      <p>This is the same as hiring a freelance writer, giving them no brief, no brand guidelines, no examples of what you like, and then being frustrated when the first draft misses the mark.</p>
-
-      <p>Invest the time in building your context library. For a new client, that means spending a few hours compiling brand docs, writing guidelines, and gathering examples of content that represents the voice you want. For an existing client where you already have all of that, just organize it into a folder and connect it.</p>
-
       <div class="section-divider"></div>
 
-      <h2>What this means for marketers worried about AI</h2>
+      <h2>Build Instructions</h2>
 
-      <p>Something that came up repeatedly during the live session is whether marketers should be concerned about their jobs. Here is our take, and it has stayed consistent across every episode we have done since.</p>
+      <div class="step">
+        <div class="step-label">Step 1: Set up your context doc folder</div>
+        <p>Create a dedicated folder on your local machine for each client or brand. Add brand guidelines, ICP documentation, writing style examples, previous high-performing content, and any presentation decks with visual branding. Connect this folder to Claude Cowork or Code at the start of every content session.</p>
+      </div>
 
-      <p>The marketers who should be worried are the ones who were already producing mediocre work and relying on volume over quality. If you were the person who wrote generic blog posts by rewording the first page of Google results, yes, AI does that faster and cheaper now.</p>
+      <div class="step">
+        <div class="step-label">Step 2: Upload the raw transcript</div>
+        <p>Download the unedited transcript from Riverside, Zoom, or your webinar platform. Drop it directly into the Claude session. Do not clean it up. The messier the input, the more context Claude has to work with.</p>
+      </div>
 
-      <p>If your value was always in your judgment, your understanding of a specific audience, your ability to look at a piece of content and know instinctively whether it works or not, you are in a stronger position than you have ever been. Because now you can apply that judgment at a speed and scale that was not possible before.</p>
+      <div class="step">
+        <div class="step-label">Step 3: Extract the best ideas</div>
+        <p>Ask Claude to outline the most engaging and insightful ideas from the transcript, taking into account the ICP and company info from the context docs. Use voice transcription (Wispr) instead of typing. When you speak, you naturally over-explain and give background context. That extra context produces dramatically better output than clean, trimmed typed prompts.</p>
+      </div>
 
-      <p>The job is taste now. Knowing what sounds right, what a specific audience needs to hear, what the difference is between technically correct copy and copy that actually makes someone stop scrolling. That is the moat. AI cannot replicate taste. It can only amplify it.</p>
+      <div class="step">
+        <div class="step-label">Step 4: Generate first drafts</div>
+        <p>Ask Claude to write drafts for each content piece using the outline it produced. Specify: LinkedIn posts, blog articles, newsletter recap, email follow-up sequences, and short-form video scripts. Claude pulls from the context docs to match the brand voice automatically.</p>
+      </div>
 
-      <h2>A note on prompting: stop overthinking it</h2>
+      <div class="step">
+        <div class="step-label">Step 5: Edit through multiple rounds</div>
+        <p>Read every draft. Identify every sentence that sounds like generic AI writing. Tell Claude exactly what is wrong: this opening line needs to work without context, this paragraph uses a banned sentence structure, this CTA points to the wrong page. For important posts, this process can take up to an hour per piece. That editing time is the entire value proposition.</p>
+      </div>
 
-      <p>We kept hearing from attendees that they freeze when they open Claude Code or Cowork because they think they need special prompt engineering syntax. They think there is some secret format or magic words that will unlock better results.</p>
-
-      <p>There is not. You just talk to it. If you have ever given a brief to a freelancer, explained a project to a new team member, or left comments on a Google Doc, you already know how to prompt AI.</p>
-
-      <p>The actual problem is the same one it has always been: most people are not specific enough. Saying "optimize for engagement" means nothing. Saying "avoid staccato sentences, do not use the word 'bank' because this is a finance startup and the word is confusing in context, and the CTA should drive to a demo page, not a blog post" gets you somewhere useful.</p>
-
-      <div class="callout">
-        <strong>Key takeaway</strong>
-        The specificity of your input determines the quality of your output. That is the whole thing. There is no secret beyond that.
+      <div class="step">
+        <div class="step-label">Step 6: Build the automated version (optional)</div>
+        <p>Take one of your full manual content sessions and ask Claude to summarize your workflow. Then go into Claude Code and say "build me this." The tool took us 2 to 3 hours to build. We are not developers. The tool generates a Google Doc with all content types. Subscribe to <a href="https://twogirlsoneclaude.substack.com">our Substack</a> to get the markdown file and build your own version.</p>
       </div>
 
       <div class="section-divider"></div>
 
-      <h2>Claude vs ChatGPT for this specific workflow</h2>
+      <h2>Quality Checklist</h2>
 
-      <p>We used ChatGPT exclusively through 2025. We switched to Claude in 2026 and the difference for content workflows specifically is substantial.</p>
+      <h3>Before publishing any content piece</h3>
+      <ul>
+        <li>Does the opening line work without any additional context?</li>
+        <li>Have you removed all banned sentence structures and overused AI words?</li>
+        <li>Does the tone match the brand voice from your context docs?</li>
+        <li>Is the CTA pointing to the correct page?</li>
+        <li>Would you be comfortable if a client saw this as a first draft?</li>
+      </ul>
 
-      <p>The biggest improvement: Claude actually maintains context from the docs folder throughout the entire chat. With ChatGPT, even with project files attached, we would constantly have to re-remind it to reference the brand guidelines. By the end of a long content session, ChatGPT would drift from the brand voice and we would have to course-correct. With Claude Cowork and Code, because it is pulling directly from the local context doc folder, that drift does not happen in the same way.</p>
+      <h3>For the automated tool output</h3>
+      <ul>
+        <li>Have you reviewed every piece before publishing? (Do not blindly publish AI output)</li>
+        <li>Does the Google Doc contain all requested content types?</li>
+        <li>Are the LinkedIn posts under the character limit?</li>
+        <li>Do the email sequences have correct subject lines and personalization tokens?</li>
+      </ul>
 
-      <p>We do not have loyalty to any specific model. We use whatever produces the best work. Right now, for content creation workflows that require sustained context awareness across long sessions, that is Claude.</p>
+      <h3>For the context doc folder</h3>
+      <ul>
+        <li>Is the writing style guide up to date with your latest "don't do this" list?</li>
+        <li>Do you have at least 5 examples of high-performing content for the brand?</li>
+        <li>Are the ICP docs specific enough (job titles, company sizes, pain points)?</li>
+      </ul>
 
       <div class="section-divider"></div>
 
-      <h2>Resources and tools mentioned</h2>
+      <h2>Common Mistakes to Avoid</h2>
 
       <ul>
-        <li><strong><a href="https://claude.ai/download">Claude Cowork and Claude Code</a></strong> (requires the desktop app, not the browser version)</li>
-        <li><strong><a href="https://www.wispr.flow/">Wispr</a></strong> for voice transcription instead of typing prompts</li>
-        <li><strong><a href="https://riverside.fm/">Riverside</a></strong> for webinar recording and transcript downloads</li>
-        <li><strong>The markdown file for the automated tool</strong> (subscribe to <a href="https://twogirlsoneclaude.substack.com">our Substack</a> to get it in the Episode 1 recap email)</li>
+        <li><strong>Skipping the context docs.</strong> If you paste a transcript with zero context, you will get mediocre output. That is not the tool failing. That is you skipping the foundational work.</li>
+        <li><strong>Publishing first-draft AI output.</strong> If your agency delivers what Claude spits out on the first pass, your clients can do that themselves for $20/month. The human judgment layer is what they pay for.</li>
+        <li><strong>Typing prompts instead of speaking them.</strong> When you type, you self-edit and trim context. When you speak, you ramble, over-explain, and give background. All of that extra context makes the output dramatically better.</li>
+        <li><strong>Using vague instructions.</strong> "Optimize for engagement" and "make it good" mean nothing to an AI. Say exactly what you want: avoid staccato sentences, do not use the word "bank" because this is a finance startup, the CTA should drive to a demo page not a blog post.</li>
+        <li><strong>Following the same template every month.</strong> If you use the automated tool without adjusting for what made each webinar unique, every content batch will feel identical. Sit down and ask: what was special about this one?</li>
+        <li><strong>Sending follow-up content too late.</strong> If you send the post-webinar email a week after the event, it is over. People have already forgotten. This workflow exists to get content out within hours, not days.</li>
       </ul>
+
+      <div class="section-divider"></div>
+
+      <h2>Handling Special Situations</h2>
+
+      <h3>Highly regulated industries</h3>
+      <p>If you work with finance, healthcare, or legal clients, your context docs need to include every compliance constraint. What words you cannot use, what claims require disclaimers, what needs legal review. Claude will follow these rules if they are clearly documented in the folder. We work with multiple finance startups where you literally cannot say the word "bank" in certain contexts.</p>
+
+      <h3>New clients with no content history</h3>
+      <p>Spend 2 to 3 hours upfront compiling brand docs, writing guidelines, and gathering examples of content that represents the voice you want. The first few batches will require heavier editing. By the third or fourth webinar, the context library is strong enough that first drafts are noticeably better.</p>
+
+      <h3>Multiple ICPs attending the same webinar</h3>
+      <p>Download the RSVP list before generating content. Ask Claude to segment attendees by role, industry, company size. If you identify 3 to 4 core ICPs, consider creating targeted email sequences and specific social posts for each segment. You can even turn these into paid ad creatives for each ICP.</p>
+
+      <h3>When the webinar content is mediocre</h3>
+      <p>Not every webinar produces great content. If the conversation was surface-level, you might only get 2 to 3 usable content pieces instead of 5 or more. That is fine. Do not force mediocre insights into more posts just to hit a content quota.</p>
+
+      <h3>Claude vs ChatGPT for this workflow</h3>
+      <p>We used ChatGPT exclusively through 2025 and switched to Claude in 2026. The biggest improvement: Claude maintains context from the docs folder throughout the entire chat. With ChatGPT, we would constantly re-remind it to reference the brand guidelines. By the end of a long content session, ChatGPT would drift from the brand voice. With Claude Cowork and Code pulling directly from local context docs, that drift does not happen.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Measuring Success</h2>
+
+      <h3>Content output per webinar</h3>
+      <ul>
+        <li>5+ LinkedIn posts (each with a unique angle from the transcript)</li>
+        <li>2 to 3 blog articles (long-form pieces based on specific topics covered)</li>
+        <li>1 newsletter recap</li>
+        <li>1 email follow-up sequence (3 to 5 emails)</li>
+        <li>2 to 3 short-form video script outlines</li>
+      </ul>
+
+      <h3>Time benchmarks</h3>
+      <ul>
+        <li><strong>Manual workflow (high quality):</strong> 3 to 4 hours per webinar for a full content package</li>
+        <li><strong>Automated tool (good baseline):</strong> 20 to 30 minutes to generate, plus 1 to 2 hours editing</li>
+        <li><strong>Before this workflow:</strong> 2 to 3 days for a content team to produce the same output</li>
+      </ul>
+
+      <h3>Quality indicators</h3>
+      <ul>
+        <li>Content passes brand voice review without major rewrites</li>
+        <li>Follow-up emails sent within 24 hours of the webinar (not a week later)</li>
+        <li>LinkedIn posts generate engagement comparable to manually written posts</li>
+        <li>Clients cannot tell which posts were AI-assisted vs. fully manual</li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2>The Prompts</h2>
+
+      <h3>Prompt 1: Idea extraction</h3>
+      <div class="callout">
+        <strong>Prompt</strong>
+        Look at the webinar transcript attached and take into account all of the company info through the context docs folder. Look through the entire transcript and outline the most engaging and insightful ideas I can use for inspiration for social media posts. The posts need to be engaging, valuable to my audience, and insightful. There needs to be enough original and valuable information shared in the webinar that I can repurpose into social media posts. Keep in mind my ICP from the context docs and everything you know about the company.
+      </div>
+
+      <h3>Prompt 2: Draft generation</h3>
+      <div class="callout">
+        <strong>Prompt</strong>
+        Take all of the social media post outlines. I like the ideas. Write the drafts for each of them. Use the context docs from the folder to understand the writing style and tone of voice. Replicate the writing style and tone of voice for these drafts.
+      </div>
+
+      <h3>Prompt 3: Editing round</h3>
+      <div class="callout">
+        <strong>Prompt</strong>
+        You used the sentence structure I told you not to. Every opening line has to be clear, concise, and understood without context. Make sure the format is more engaging for LinkedIn, not an article. No blocks of text. Do not use staccato sentences. Do not use short sentences like "Nobody's wrong." [Add your specific feedback for each draft.]
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>Expected Results</h2>
+
+      <ul>
+        <li>A full multi-channel content package from a single webinar, produced in hours instead of days</li>
+        <li>Content that maintains brand voice consistency because it pulls from your context doc library</li>
+        <li>An automated tool you own and can customize, built in 2 to 3 hours with no coding knowledge</li>
+        <li>A repeatable weekly workflow that scales across multiple clients</li>
+        <li>Follow-up content published while the webinar is still fresh in attendees' minds</li>
+        <li>Significantly reduced reliance on freelance writers for routine content repurposing</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Get the markdown file</strong>
+        Subscribe to <a href="https://twogirlsoneclaude.substack.com">our Substack</a> to get the markdown file for the automated tool. Take it into Claude Code, say "build me this," and you will have the same tool on your laptop. Then customize it for your brand.
+      </div>
 
       <!-- CTA -->
       <div class="post-cta">

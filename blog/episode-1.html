@@ -309,12 +309,12 @@
       button.textContent = '...';
 
       try {
-        const res = await fetch('https://twogirlsoneclaude.com/api/v1/free', {
+        const res = await fetch('https://twogirlsoneclaude.substack.com/api/v1/free', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email: email,
-            first_url: 'https://twogirlsoneclaude.com/',
+            first_url: 'https://twogirlsoneclaude.substack.com/',
             source: 'embed'
           })
         });
@@ -328,7 +328,7 @@
           success.classList.add('visible');
         }
       } catch (err) {
-        window.open('https://twogirlsoneclaude.com/subscribe?simple=true&email=' + encodeURIComponent(email), '_blank');
+        window.open('https://twogirlsoneclaude.substack.com/subscribe?simple=true&email=' + encodeURIComponent(email), '_blank');
         success.textContent = 'Finishing signup in a new tab.';
         success.classList.add('visible');
         form.querySelector('input').value = '';

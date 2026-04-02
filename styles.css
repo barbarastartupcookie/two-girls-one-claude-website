@@ -343,6 +343,18 @@ a {
   margin-bottom: 0.2rem;
 }
 
+.about-name a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border);
+  transition: text-decoration-color 0.2s;
+}
+
+.about-name a:hover {
+  text-decoration-color: var(--red);
+}
+
 .about-role {
   font-size: 0.72rem;
   font-weight: 700;

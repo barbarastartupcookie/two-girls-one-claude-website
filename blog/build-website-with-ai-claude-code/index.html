@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Build a Website with AI Using Claude Code (From Zero to Live in Under an Hour) | Two girls, one Claude</title>
+  <meta name="description" content="Step-by-step workflow for building a complete website using Claude Code. Covers preparation, context docs, design feedback with screenshots, email capture setup, and deploying your site. No coding experience needed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need coding experience to build a website with Claude Code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Claude Code writes all the HTML, CSS, and JavaScript for you. You describe what you want in plain language, review the output in your browser, and give feedback using screenshots and descriptions. Both authors of this workflow have zero developer background and built production websites this way."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a website with AI using Claude Code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The initial working version takes 15 to 30 minutes if you have your preparation materials ready. Expect another 30 to 60 minutes of design refinement using screenshot-based feedback. A complete, deployed website with email capture and custom styling can be done in under two hours total."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Claude Code and Lovable for building websites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claude Code runs in your terminal and generates raw HTML, CSS, and JavaScript files that you own completely. Lovable is a browser-based tool with a visual interface that generates and hosts the site for you. Claude Code gives you more control and no platform dependency. Lovable is faster for people who want a visual builder with less technical setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What preparation materials do I need before starting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At minimum, prepare a mood board or reference site for layout inspiration, your brand colors as hex codes, font choices, any photos or logos you want on the site, and any previous marketing materials that show your brand aesthetic. The more reference material you give Claude Code, the closer the first draft will be to what you want."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I connect forms and email capture to my website built with Claude Code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can connect to any email platform that has an API. We connected our site to Substack using their API endpoint for free subscriptions. Claude Code wrote the JavaScript for the form submission, error handling, and fallback behavior. You can do the same with Mailchimp, ConvertKit, Beehiiv, or any platform with a public API."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if Claude Code generates something that looks wrong?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Take a screenshot of the specific section that looks wrong and describe what needs to change. This is the most effective feedback method. Instead of trying to describe layout issues in words, show Claude Code exactly what you see and say what is off. Screenshots plus plain language descriptions produce accurate fixes in one or two rounds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Claude Code to build a website for a client project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The workflow is the same. Gather the client's brand materials, reference sites, and content into a preparation folder before starting. Client projects take longer because you need more feedback rounds to match their expectations, but the build process is identical."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I deploy a website built with Claude Code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claude Code generates static HTML, CSS, and JavaScript files. You can deploy these on any hosting platform: GitHub Pages, Netlify, Vercel, or a traditional web host. Push the files to a GitHub repository and connect it to your preferred hosting service. Claude Code can walk you through the deployment steps if you ask."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if Claude Code suggests I do something manually instead of doing it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Push back. When Claude Code gives you terminal commands to run or manual steps to follow, tell it to do it for you. Claude Code can execute commands, create files, and configure settings directly. The default behavior is sometimes to instruct rather than act, but a direct request like 'do it for me' changes that."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this workflow work with tools other than Claude Code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The preparation and feedback principles apply to any AI website builder. Lovable, Bolt, and similar tools all benefit from thorough context materials and screenshot-based feedback. Claude Code is our preferred tool because it produces files you own with no platform lock-in, but the workflow structure transfers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I add new pages or features to my site after the initial build?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open a new Claude Code session in the same project folder. Claude Code reads your existing files and understands the current site structure, styles, and conventions. Describe what you want to add, and it will build new pages or features that match the existing design. We add new workflow pages to our site this way every week."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .post {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+
+    .post-meta {
+      margin-bottom: 2.5rem;
+    }
+
+    .post-tag {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--red-muted);
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .post-title {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-top: 1rem;
+    }
+
+    .post-byline {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-top: 0.75rem;
+    }
+
+    .post-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--red);
+      margin-top: 1.5rem;
+    }
+
+    .post-body {
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .post-body p {
+      margin-bottom: 1.4rem;
+    }
+
+    .post-body h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .post-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--red);
+    }
+
+    .post-body ul {
+      margin-bottom: 1.4rem;
+      padding-left: 1.5rem;
+    }
+
+    .post-body li {
+      margin-bottom: 0.5rem;
+      line-height: 1.75;
+    }
+
+    .post-body strong {
+      font-weight: 700;
+    }
+
+    .post-body a {
+      color: var(--red);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .post-body a:hover {
+      color: var(--red-light);
+    }
+
+    .post-body blockquote {
+      border-left: 3px solid var(--red);
+      padding-left: 1.25rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .post-body img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin: 1.5rem 0;
+    }
+
+    /* === TOPIC TAGS === */
+    .post-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .post-topics span {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      background: var(--white);
+    }
+
+    /* === AUTHOR CARD === */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: var(--black);
+      border: none;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .author-photos {
+      display: flex;
+      gap: 0;
+    }
+
+    .author-photos img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid var(--black);
+      margin: 0;
+    }
+
+    .author-photos img:last-child {
+      margin-left: -12px;
+    }
+
+    .author-info {
+      flex: 1;
+    }
+
+    .author-names {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+
+    .author-names a {
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .author-names a:hover {
+      color: var(--red-light);
+    }
+
+    .author-desc {
+      font-size: 0.78rem;
+      color: #9B9590;
+      margin-top: 0.15rem;
+    }
+
+    /* === CALLOUT BOX === */
+    .callout {
+      background: var(--cream-dark);
+      border-left: 3px solid var(--red);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .callout strong {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.4rem;
+    }
+
+    /* === SECTION DIVIDER === */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--red);
+      margin: 3rem 0;
+      opacity: 0.3;
+    }
+
+    /* === STEP BLOCKS === */
+    .step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .step-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.4rem;
+    }
+
+    .step p {
+      margin-bottom: 0;
+    }
+
+    /* === STYLED LIST === */
+    .post-body ul.styled-list {
+      list-style: none;
+      padding-left: 0;
+      border-left: 2px solid var(--border);
+      padding-left: 1.25rem;
+    }
+
+    .post-body ul.styled-list li {
+      margin-bottom: 0.85rem;
+      padding-left: 0;
+    }
+
+    /* === FAQ === */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.75rem 0;
+    }
+
+    .faq-item:first-child {
+      padding-top: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .faq-answer p {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .author-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+      }
+    }
+
+    .post-cta {
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .post-cta-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-cta-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .post-back {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+
+    .post-back:hover {
+      color: var(--red);
+    }
+
+    .post-back::before {
+      content: "\2190\00a0";
+    }
+
+    @media (max-width: 768px) {
+      .post {
+        padding: 2.5rem 1.5rem 4rem;
+      }
+
+      .post-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-logo">Two girls, one Claude</a>
+      <div class="nav-links">
+        <a href="../../blog/">Workflows</a>
+        <a href="../../index.html#about">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- POST -->
+  <article class="post">
+    <a href="../../blog/" class="post-back">All workflows</a>
+
+    <div class="post-meta">
+      <span class="post-tag">Episode 2</span>
+      <h1 class="post-title">How to build a website with AI using Claude Code (from zero to live in under an hour)</h1>
+      <p class="post-byline">March 23, 2026</p>
+      <div class="post-topics">
+        <span>Claude Code</span>
+        <span>Website Building</span>
+        <span>AI Prototyping</span>
+        <span>Side Projects</span>
+      </div>
+      <div class="post-rule"></div>
+    </div>
+
+    <!-- AUTHOR CARD -->
+    <div class="author-card">
+      <div class="author-photos">
+        <img src="../../NEW Barbara.jpg" alt="Barbara">
+        <img src="../../NEWEST Bojana.png" alt="Bojana">
+      </div>
+      <div class="author-info">
+        <div class="author-names">
+          <a href="https://www.linkedin.com/in/barbara-startup-cookie/?skipRedirect=true" target="_blank">Barbara</a> &amp;
+          <a href="https://www.linkedin.com/in/bojanavojnovic/" target="_blank">Bojana</a>
+        </div>
+        <div class="author-desc">Builders at Two girls, one Claude</div>
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      <p>Build a complete, deployed website using Claude Code without writing a single line of code yourself. This workflow covers the full process: preparing your brand materials, prompting Claude Code for a first draft, refining the design through screenshot-based feedback, connecting email capture to your newsletter platform, and deploying the finished site. We built the Two girls, one Claude website in about 20 minutes using this exact process.</p>
+
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/PLACEHOLDER" title="Two girls one Claude - Episode 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 6px; margin: 1.5rem 0;"></iframe>
+
+      <div class="section-divider"></div>
+
+      <h2>Workflow Description</h2>
+
+      <p>This workflow produces a fully functional website from a folder of brand materials and a plain-language description of what you want. Claude Code generates all the HTML, CSS, and JavaScript. You review each version in your browser and give feedback by screenshotting specific sections and describing what needs to change.</p>
+
+      <p>The output is a set of static files you own completely. No platform lock-in, no monthly subscription, no dependency on a visual builder. You can deploy the files anywhere: GitHub Pages, Netlify, Vercel, or a traditional web host.</p>
+
+      <p>This same approach works for side projects, client websites, landing pages, and portfolio sites. Bojana used a similar process with <a href="https://lovable.dev">Lovable</a> to build a website for a mentorship side project she had been trying to start for four years. She had the site live in about an hour.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Before You Begin</h2>
+
+      <h3>Tools you'll need</h3>
+      <ul>
+        <li><a href="https://claude.ai/download">Claude Code</a> installed on your machine (terminal-based, not the browser version)</li>
+        <li>A code editor or file browser to view generated files (VS Code, Finder, or similar)</li>
+        <li>A modern web browser for previewing the site as you build</li>
+        <li>A GitHub account (for deployment)</li>
+      </ul>
+
+      <h3>What to prepare before opening Claude Code</h3>
+      <ul>
+        <li><strong>A preparation folder</strong> containing everything Claude Code needs to understand your brand. This is the single most important part of the process. Include: mood board images or screenshots of sites you like, brand colors as hex codes, font choices, photos you want on the site, logos, and any previous marketing materials (flyers, social graphics, pitch decks) that show your visual identity.</li>
+        <li><strong>A reference site for layout</strong> that you want to use as structural inspiration. We used <a href="https://startupgrowth.ai">startupgrowth.ai</a> for ours. You are not copying the design. You are giving Claude Code a concrete example of the layout structure, spacing, and section organization you like.</li>
+        <li><strong>A list of pages and sections</strong> you need. Write out what each page should contain in plain sentences. Home page with hero section, about section, team bios, contact form. The more specific you are about content, the less back-and-forth you will need.</li>
+        <li><strong>All copy and text content</strong> ready to paste or reference. Headlines, descriptions, bios, CTAs. If you have this prepared, Claude Code drops it directly into the generated site. If you leave it vague, you will spend time rewriting placeholder text later.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Why preparation determines the outcome</strong>
+        The quality of your first draft depends almost entirely on what you put in the preparation folder. A bare prompt with no references produces a generic-looking site. A folder with mood board images, brand colors, font files, photos, and a reference layout produces a first draft that is 80% of the way to finished. Spend 30 minutes gathering materials before you open Claude Code.
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>How It Works</h2>
+
+      <p>The build follows a tight feedback loop. You describe what you want, Claude Code generates the files, you open them in a browser, screenshot anything that looks wrong, and describe the fix. Each round takes 2 to 5 minutes. Most sites reach a publishable state in 4 to 8 rounds.</p>
+
+      <p><strong>Preparation folder</strong> &rarr; <strong>Initial prompt with references</strong> &rarr; <strong>First draft review</strong> &rarr; <strong>Screenshot-based feedback rounds</strong> &rarr; <strong>Email capture integration</strong> &rarr; <strong>Deployment</strong></p>
+
+      <img src="website-first-draft.png" alt="First draft of a website generated by Claude Code">
+
+      <div class="section-divider"></div>
+
+      <h2>Build Instructions</h2>
+
+      <div class="step">
+        <div class="step-label">Step 1: Assemble your preparation folder</div>
+        <p>Create a folder on your machine with all brand materials. Include mood board screenshots, hex color codes, font names, photos, logos, and any previous promo materials that represent your brand. Add a reference site URL or screenshots of layouts you like. The folder should give Claude Code enough visual and textual context to understand your brand without any further explanation. This step takes 20 to 30 minutes and saves hours of revision later.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Step 2: Write your initial prompt</div>
+        <p>Open Claude Code in the folder where you want the site files to live. Reference your preparation materials directly: "Build me a website. Use the brand colors, fonts, and photos from this folder. Use [reference site] as layout inspiration. I need a home page with a hero section, an about section, team bios, and an email signup form." Point Claude Code to specific files in your folder. The more concrete you are about structure and content, the better the first draft.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Step 3: Review the first draft in your browser</div>
+        <p>Open the generated HTML file in your browser. The first version will have things that need fixing. Common issues on a first pass: sections that look too much like a SaaS template, colors pulled from the reference site instead of your brand colors, placeholder text where real copy should go, and bios or names mixed up if you have multiple team members. All of this is normal. Do not try to fix everything at once. Identify the biggest issues first.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Step 4: Give feedback using screenshots</div>
+        <p>Screenshot the specific section that needs work. Paste it into the Claude Code conversation and describe what is wrong. "This section has a black background from the reference site. Change it to our cream background color." "The team bios are swapped. Barbara's photo has Bojana's description." "This hero section looks too SaaS. Make it simpler with just the headline, a one-line description, and the signup form." Screenshots are dramatically more effective than trying to describe layout problems in words alone. Expect 4 to 8 feedback rounds for a complete site.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Step 5: Connect email capture and integrations</div>
+        <p>Tell Claude Code to connect the signup form to your email platform. We connected ours to Substack using their API endpoint for free subscriptions. Claude Code wrote all the JavaScript: the form submission handler, success and error messages, and a fallback that opens the Substack subscribe page in a new tab if the API call fails. If Claude Code gives you instructions to do this manually, push back and say "do it for me." It can write and execute the integration code directly.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Step 6: Deploy the site</div>
+        <p>Push the generated files to a GitHub repository and connect it to your hosting platform. Claude Code can create the repository, add files, and push the initial commit for you. For GitHub Pages, Netlify, or Vercel, the deployment process takes under 5 minutes once the files are in a repo. Ask Claude Code to walk you through each step, or tell it to handle the git commands directly.</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>Quality Checklist</h2>
+
+      <h3>Before deploying</h3>
+      <ul>
+        <li>Does the site load correctly on mobile? (Resize your browser window to check)</li>
+        <li>Are all brand colors matching your hex codes, not pulled from the reference site?</li>
+        <li>Do all links point to the correct destinations?</li>
+        <li>Is the email signup form working? (Test with your own email)</li>
+        <li>Are all photos loading and properly sized?</li>
+        <li>Is the text content final, with no placeholder copy remaining?</li>
+      </ul>
+
+      <h3>Design quality</h3>
+      <ul>
+        <li>Does the site look like your brand, not like the reference site?</li>
+        <li>Is spacing consistent between sections?</li>
+        <li>Do fonts render correctly across browsers?</li>
+        <li>Are team bios and names matched to the correct photos?</li>
+      </ul>
+
+      <h3>Technical checks</h3>
+      <ul>
+        <li>Does the form submission handle errors gracefully?</li>
+        <li>Is there a fallback if the API call fails?</li>
+        <li>Are images optimized for web (not 5MB raw photos)?</li>
+        <li>Does the page title and meta description match your content?</li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2>Common Mistakes to Avoid</h2>
+
+      <ul>
+        <li><strong>Starting without a preparation folder.</strong> Opening Claude Code and typing "build me a website" with no references, no colors, no photos, and no layout inspiration produces a generic template. The 30 minutes you spend preparing materials saves 2 hours of revisions.</li>
+        <li><strong>Describing layout problems instead of screenshotting them.</strong> Trying to explain "the spacing between the hero section and the about section feels off" in words takes 3 rounds to fix. Screenshotting the section and saying "reduce the gap between these two sections by half" fixes it in one round.</li>
+        <li><strong>Accepting manual instructions from Claude Code.</strong> When Claude Code says "run this command in your terminal" or "open this file and change line 42," tell it to do it for you. Claude Code can execute commands and edit files directly. The default behavior is sometimes to instruct, but a direct request changes that.</li>
+        <li><strong>Trying to fix everything in one feedback round.</strong> Address the biggest structural issues first (wrong layout, missing sections, wrong background colors). Then handle detail work (spacing, font sizes, button styles) in subsequent rounds. Mixing structural and detail feedback in one prompt produces inconsistent results.</li>
+        <li><strong>Using the reference site's actual design instead of just its layout.</strong> If you point Claude Code to a dark-themed SaaS site as layout inspiration, expect the first draft to have dark backgrounds and SaaS-style elements. Be explicit about what you are borrowing (section structure, navigation layout) and what you are not (color scheme, visual style).</li>
+        <li><strong>Skipping the email capture integration.</strong> A website without a way to collect visitor emails is a brochure. Build the signup form into the first version, not as an afterthought. The integration takes 10 minutes with Claude Code.</li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2>Handling Special Situations</h2>
+
+      <h3>When you need a logo designed</h3>
+      <p>Claude Code can work with the Claude-Figma integration for logo creation and iteration. For a project with many logo variants (Barbara worked on one with over 400), this integration handles batch generation and refinement. For simpler needs, provide a text description of what you want and let Claude Code generate SVG or basic graphic options directly.</p>
+
+      <h3>When your side project has been stalled for years</h3>
+      <p>Bojana had a mentorship side project she wanted to launch for four years. She built the website in about an hour using <a href="https://lovable.dev">Lovable</a> after watching the process with Claude Code. The barrier was never the idea or the content. The barrier was the perceived difficulty of building a website. AI tools remove that barrier entirely. If you have a project folder sitting on your desktop, this workflow gets it live today.</p>
+
+      <img src="lovable-website.png" alt="Website built with Lovable for a mentorship side project">
+
+      <h3>When the first draft looks like a SaaS landing page</h3>
+      <p>This happens when your reference site has SaaS-style elements and you did not explicitly exclude them. Screenshot the sections that feel too corporate or template-like and describe what you want instead. "This section has feature cards with icons that look like a B2B product page. Replace it with a simple text section that describes what we do." Be specific about the vibe you want. Claude Code responds well to concrete descriptions.</p>
+
+      <h3>When you want to build a more complex app-like site</h3>
+      <p><a href="https://lovable.dev">Lovable</a> is a better fit for sites that need interactive components, user authentication, or database connections. Claude Code produces static sites well. For anything that requires a backend or dynamic functionality, consider a tool designed for full-stack generation. You can always start with Claude Code for the initial design and migrate to a more complex tool later.</p>
+
+      <h3>When Claude Code and you need to build a relationship</h3>
+      <p>The first session will not be as smooth as the tenth. Spending time with the tool and learning how it interprets your feedback is part of the process. There is no magic prompt that produces a perfect website on the first try. What works is iteration: give feedback, see what changes, adjust your communication style based on what Claude Code responds to best. The skill is in the feedback loop, not in crafting one perfect instruction.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Measuring Success</h2>
+
+      <h3>Build time benchmarks</h3>
+      <ul>
+        <li><strong>Preparation:</strong> 20 to 30 minutes gathering brand materials and references</li>
+        <li><strong>First working draft:</strong> 15 to 30 minutes from initial prompt to a viewable page</li>
+        <li><strong>Design refinement:</strong> 30 to 60 minutes of screenshot-based feedback rounds</li>
+        <li><strong>Email capture integration:</strong> 10 to 15 minutes</li>
+        <li><strong>Deployment:</strong> 5 to 10 minutes</li>
+        <li><strong>Total for a complete site:</strong> Under 2 hours with preparation included</li>
+      </ul>
+
+      <h3>Output quality indicators</h3>
+      <ul>
+        <li>The site looks like your brand, not like a generic template</li>
+        <li>A visitor cannot tell it was built with AI</li>
+        <li>The email signup form works and delivers subscribers to your newsletter platform</li>
+        <li>The site loads fast on mobile and desktop</li>
+        <li>You can add new pages and sections by opening a new Claude Code session in the same folder</li>
+      </ul>
+
+      <h3>Comparison to traditional approaches</h3>
+      <ul>
+        <li><strong>Hiring a developer:</strong> 2 to 4 weeks and $2,000 to $10,000 for a comparable site</li>
+        <li><strong>Using a website builder (Squarespace, Wix):</strong> 1 to 3 days plus an ongoing monthly subscription</li>
+        <li><strong>Building it yourself with HTML/CSS:</strong> 1 to 2 weeks if you are learning as you go</li>
+        <li><strong>This workflow:</strong> Under 2 hours, no ongoing costs, full ownership of all files</li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2>The Prompts</h2>
+
+      <h3>Prompt 1: Initial build</h3>
+      <div class="callout">
+        <strong>Prompt</strong>
+        Build me a website for [project name]. Use the brand colors, fonts, and photos from this folder. Use [reference site URL] as inspiration for the layout structure and section organization, but use our brand colors and visual style, not theirs. I need a home page with: a hero section with headline and email signup, an about section explaining what we do, team bios with our photos, and a footer. All the copy and content is in the folder. Use the photos I have included for the team section.
+      </div>
+
+      <h3>Prompt 2: Screenshot-based design feedback</h3>
+      <div class="callout">
+        <strong>Prompt</strong>
+        [Paste screenshot] This section has a black background that came from the reference site. Change it to our cream background. Also, the team bios are swapped. Barbara's photo is showing Bojana's description and vice versa. Fix the name and bio matching. Keep everything else the same.
+      </div>
+
+      <h3>Prompt 3: Email capture integration</h3>
+      <div class="callout">
+        <strong>Prompt</strong>
+        Connect the email signup form to [platform]. Use their API to submit the email address. Add a success message that says "You're in. Check your inbox." If the API call fails, open the [platform] subscribe page in a new tab as a fallback so the user can still sign up. Handle the loading state on the button while the request is in progress.
+      </div>
+
+      <h3>Prompt 4: Pushing back on manual instructions</h3>
+      <div class="callout">
+        <strong>Prompt</strong>
+        Do not give me instructions. Do it for me. Create the GitHub repository, add all the files, commit them, and push. Then tell me when it is done.
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>Expected Results</h2>
+
+      <ul>
+        <li>A complete, deployed website with your brand colors, fonts, photos, and copy</li>
+        <li>A working email capture form connected to your newsletter platform</li>
+        <li>Static HTML, CSS, and JavaScript files that you own with no platform dependency</li>
+        <li>A project folder you can reopen in Claude Code anytime to add pages, update content, or change the design</li>
+        <li>The confidence to build websites for other projects using the same process</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Get the markdown file</strong>
+        Subscribe to <a href="https://twogirlsoneclaude.substack.com">our Substack</a> to get the preparation checklist and prompt templates for this workflow. Take them into Claude Code and customize for your own project.
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>Resources</h2>
+
+      <ul>
+        <li><a href="https://claude.ai/download">Claude Code</a> (terminal-based AI coding tool from Anthropic)</li>
+        <li><a href="https://lovable.dev">Lovable</a> (visual AI website builder, good for app-like sites)</li>
+        <li><a href="https://riverside.fm">Riverside</a> (recording platform we use for our live sessions)</li>
+        <li><a href="https://startupgrowth.ai">Startup Growth AI</a> (the site we used as layout inspiration)</li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Do I need coding experience to build a website with Claude Code?</h3>
+        <div class="faq-answer">
+          <p>No. Claude Code writes all the HTML, CSS, and JavaScript for you. You describe what you want in plain language, review the output in your browser, and give feedback using screenshots and descriptions. Both of us have zero developer background and built production websites this way.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">How long does it take to build a website with AI using Claude Code?</h3>
+        <div class="faq-answer">
+          <p>The initial working version takes 15 to 30 minutes if your preparation materials are ready. Expect another 30 to 60 minutes of design refinement through screenshot-based feedback. A complete, deployed website with email capture and custom styling can be done in under two hours total. We built the Two girls, one Claude website in about 20 minutes for the first working draft.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What is the difference between Claude Code and Lovable for building websites?</h3>
+        <div class="faq-answer">
+          <p>Claude Code runs in your terminal and generates raw HTML, CSS, and JavaScript files that you own completely. Lovable is a browser-based tool with a visual interface that generates and hosts the site for you. Claude Code gives you more control and no platform dependency. Lovable is faster for people who want a visual builder with less technical setup. Bojana built her mentorship site with Lovable in about an hour after watching the Claude Code process.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What preparation materials do I need before starting?</h3>
+        <div class="faq-answer">
+          <p>At minimum: a reference site for layout inspiration, your brand colors as hex codes, font choices, any photos or logos you want on the site, and previous marketing materials that show your brand aesthetic. The more you give Claude Code, the closer the first draft will be to your vision. Barbara prepared a full folder with mood board images, brand colors, fonts, photos, and previous promo materials before the live session.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Can I connect forms and email capture to my website built with Claude Code?</h3>
+        <div class="faq-answer">
+          <p>Yes. You can connect to any email platform that has an API. We connected ours to Substack using their API endpoint. Claude Code wrote all the JavaScript for form submission, error handling, and a fallback that opens the subscribe page in a new tab if the API call fails. The same approach works with Mailchimp, ConvertKit, Beehiiv, or any platform with a public API.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What if Claude Code generates something that looks wrong?</h3>
+        <div class="faq-answer">
+          <p>Take a screenshot of the specific section that looks wrong and describe what needs to change. This is the most effective feedback method. Instead of trying to describe layout issues in words, show Claude Code exactly what you see and say what is off. Our first draft had a black background pulled from the reference site and swapped team bios. Both were fixed in a single feedback round using screenshots.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Can I use Claude Code to build a website for a client project?</h3>
+        <div class="faq-answer">
+          <p>Yes. The workflow is the same. Gather the client's brand materials, reference sites, and content into a preparation folder before starting. Client projects typically take more feedback rounds to match their expectations, but the build process is identical. Having all client brand assets in one folder before you start is especially important for client work.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">How do I deploy a website built with Claude Code?</h3>
+        <div class="faq-answer">
+          <p>Claude Code generates static HTML, CSS, and JavaScript files. Push them to a GitHub repository and connect it to GitHub Pages, Netlify, or Vercel for hosting. Claude Code can handle the git commands for you if you ask. Deployment takes under 10 minutes once the files are in a repository.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What if Claude Code suggests I do something manually instead of doing it?</h3>
+        <div class="faq-answer">
+          <p>Push back. Say "do it for me." Claude Code can execute commands, create files, and configure settings directly. The default behavior sometimes leans toward instructing you, but a direct request changes the mode. This applies to git commands, file edits, API integrations, and deployment steps. If Claude Code can do it through the terminal, it should do it for you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Does this workflow work with tools other than Claude Code?</h3>
+        <div class="faq-answer">
+          <p>The preparation and feedback principles apply to any AI website builder. Lovable, Bolt, and similar tools all benefit from thorough context materials and specific feedback. Claude Code is our preferred tool because it produces files you own with no platform lock-in, but the workflow structure transfers to other tools.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">How do I add new pages or features to my site after the initial build?</h3>
+        <div class="faq-answer">
+          <p>Open a new Claude Code session in the same project folder. Claude Code reads your existing files and understands the current site structure, styles, and conventions. Describe what you want to add, and it builds new pages that match the existing design automatically. We add new workflow pages to our site this way every week using the exact structure and styling from the original build.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="post-cta">
+        <p class="post-cta-title">Want more like this?</p>
+        <p class="post-cta-text">One email per week. Recaps, prompts, and lessons from every live session.</p>
+        <form class="hero-form" onsubmit="handleSubscribe(event)">
+          <div class="form-row">
+            <input type="email" placeholder="your@email.com" required class="hero-input" />
+            <button type="submit" class="hero-button">Subscribe</button>
+          </div>
+          <p class="form-success" id="formSuccess">You're in. Check your inbox.</p>
+        </form>
+      </div>
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-rule"></div>
+      <p class="footer-logo">Two girls, one Claude</p>
+      <p class="footer-sub">— live build sessions —</p>
+      <p class="footer-copy">&copy; 2026 Two girls, one Claude All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    async function handleSubscribe(e) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input').value;
+      const button = form.querySelector('button');
+      const success = document.getElementById('formSuccess');
+
+      button.disabled = true;
+      button.textContent = '...';
+
+      try {
+        const res = await fetch('https://twogirlsoneclaude.substack.com/api/v1/free', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            first_url: 'https://twogirlsoneclaude.substack.com/',
+            source: 'embed'
+          })
+        });
+
+        if (res.ok) {
+          success.textContent = "You're in. Check your inbox.";
+          success.classList.add('visible');
+          form.querySelector('input').value = '';
+        } else {
+          success.textContent = 'Something went wrong. Try again.';
+          success.classList.add('visible');
+        }
+      } catch (err) {
+        window.open('https://twogirlsoneclaude.substack.com/subscribe?simple=true&email=' + encodeURIComponent(email), '_blank');
+        success.textContent = 'Finishing signup in a new tab.';
+        success.classList.add('visible');
+        form.querySelector('input').value = '';
+      }
+
+      button.disabled = false;
+      button.textContent = 'Subscribe';
+      setTimeout(() => success.classList.remove('visible'), 5000);
+    }
+  </script>
+
+</body>
+</html>

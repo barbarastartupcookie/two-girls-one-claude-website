@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Build a B2B Content Distribution System on LinkedIn (with AI and Automation) | Two girls, one Claude</title>
+  <meta name="description" content="A step-by-step workflow for building a LinkedIn content distribution system using HeyReach, Clay, Ahrefs, and Claude. Includes the outreach campaign that achieved a 57% reply rate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is LinkedIn content distribution for B2B?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "LinkedIn content distribution for B2B is the process of taking a single content piece and systematically pushing it across multiple channels to reach your target audience. This includes derivative content like shorter videos, community posts, blog placements, newsletters, LinkedIn outreach campaigns, and sales enablement materials. The goal is to extract maximum reach from every piece of content you produce."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many derivative pieces should each content asset produce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every content piece should spawn a minimum of 10 derivative content pieces. A single YouTube video can become shorter clips, community posts, blog placements, additional blog articles, playbooks, newsletter content, posts for closed communities, LinkedIn posts across multiple accounts, outreach campaigns, and sales enablement materials."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does personalization matter in LinkedIn outreach?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Personalization matters, but only the right kind. Reading someone's content and referencing specifics works. Generic personalization like mentioning where someone lives or their job title does not. Based on analysis of 96,051 campaigns, relevance and good prospecting matter more than message personalization. Blank connection requests actually outperform ones with generic messages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What reply rate can I expect from LinkedIn outreach campaigns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Industry benchmarks for LinkedIn outreach sit around 15 to 18% reply rates. With highly targeted prospecting, relevant messaging, and proper tool integration (Claude connected to Ahrefs via MCP, Clay for enrichment, HeyReach for sending), reply rates of 57% are achievable on specific campaigns like link building outreach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I send a connection request with or without a message?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you do not have something genuinely relevant to say, send a blank connection request. Blank connection requests outperform ones with generic messages. Only include a message if you can reference something specific about the person's content, company, or recent activity. A message that adds no value performs worse than no message at all."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What tools do I need for B2B LinkedIn content distribution?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The core stack includes HeyReach for LinkedIn outreach automation, Clay for lead enrichment, Ahrefs for competitor and content analysis, Claude Code for AI-powered prospecting and message generation, and Trigify for signal-based prospecting. You do not need all of these on day one. Start with HeyReach and Claude, then add enrichment tools as your campaigns scale."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I define my ICP for LinkedIn outreach?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Build your ICP from data, not assumptions. Analyze your existing customers and engaged audience to identify patterns in job titles, company sizes, industries, and seniority levels. For B2B startups, common ICP segments include content marketers, heads of content or growth, and marketing managers at mid to senior level. Use Claude to analyze your LinkedIn engagement data and pull out the specific titles and company characteristics that convert."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is content inflation and how do I avoid it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Content inflation happens when you push volume for the sake of volume, which devalues everything you publish. Avoid it by matching content to the right channel instead of blasting everything everywhere. Some content is built for search, some for social, some for email, and some for direct outreach. Not every piece belongs on every channel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should automation stop and a human take over in LinkedIn outreach?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automation should stop the moment a prospect responds. When the system detects a reply, it pauses the sequence immediately and a human takes over the conversation. Automated follow-ups after someone has already responded destroy trust and make the outreach feel robotic. The automation handles the initial contact at scale. The human handles the relationship."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this distribution system without HeyReach?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can apply the distribution framework with any LinkedIn outreach tool. HeyReach is used in this workflow because of its multi-account sending capabilities and campaign analytics. The principles of targeted prospecting, relevant messaging, and human handoff on response apply regardless of which tool you use. The ICP analysis and content distribution mapping steps work with any outreach platform."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I measure if my LinkedIn distribution system is working?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Track three metrics: connection acceptance rate (benchmark is 1 in 5 connections accepted), reply rate (benchmark is 15 to 18%, top performers hit 40% or higher on targeted campaigns), and content derivatives per original piece (target minimum 10). If your reply rates are below benchmark, the problem is almost always your target list, not your message copy."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .post {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+
+    .post-meta {
+      margin-bottom: 2.5rem;
+    }
+
+    .post-tag {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--red-muted);
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .post-title {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-top: 1rem;
+    }
+
+    .post-byline {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-top: 0.75rem;
+    }
+
+    .post-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--red);
+      margin-top: 1.5rem;
+    }
+
+    .post-body {
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .post-body p {
+      margin-bottom: 1.4rem;
+    }
+
+    .post-body h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .post-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--red);
+    }
+
+    .post-body ul {
+      margin-bottom: 1.4rem;
+      padding-left: 1.5rem;
+    }
+
+    .post-body li {
+      margin-bottom: 0.5rem;
+      line-height: 1.75;
+    }
+
+    .post-body strong {
+      font-weight: 700;
+    }
+
+    .post-body a {
+      color: var(--red);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .post-body a:hover {
+      color: var(--red-light);
+    }
+
+    .post-body blockquote {
+      border-left: 3px solid var(--red);
+      padding-left: 1.25rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .post-body img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin: 1.5rem 0;
+    }
+
+    /* === TOPIC TAGS === */
+    .post-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .post-topics span {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      background: var(--white);
+    }
+
+    /* === AUTHOR CARD === */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: var(--black);
+      border: none;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .author-photos {
+      display: flex;
+      gap: 0;
+    }
+
+    .author-photos img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid var(--black);
+      margin: 0;
+    }
+
+    .author-photos img:last-child {
+      margin-left: -12px;
+    }
+
+    .author-info {
+      flex: 1;
+    }
+
+    .author-names {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+
+    .author-names a {
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .author-names a:hover {
+      color: var(--red-light);
+    }
+
+    .author-desc {
+      font-size: 0.78rem;
+      color: #9B9590;
+      margin-top: 0.15rem;
+    }
+
+    /* === CALLOUT BOX === */
+    .callout {
+      background: var(--cream-dark);
+      border-left: 3px solid var(--red);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .callout strong {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.4rem;
+    }
+
+    /* === SECTION DIVIDER === */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--red);
+      margin: 3rem 0;
+      opacity: 0.3;
+    }
+
+    /* === STEP BLOCKS === */
+    .step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .step-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.4rem;
+    }
+
+    .step p {
+      margin-bottom: 0;
+    }
+
+    /* === STYLED LIST === */
+    .post-body ul.styled-list {
+      list-style: none;
+      padding-left: 0;
+      border-left: 2px solid var(--border);
+      padding-left: 1.25rem;
+    }
+
+    .post-body ul.styled-list li {
+      margin-bottom: 0.85rem;
+      padding-left: 0;
+    }
+
+    /* === FAQ === */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.75rem 0;
+    }
+
+    .faq-item:first-child {
+      padding-top: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+      margin-top: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .faq-answer p {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .author-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+      }
+    }
+
+    .post-cta {
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .post-cta-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-cta-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .post-back {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+
+    .post-back:hover {
+      color: var(--red);
+    }
+
+    .post-back::before {
+      content: "\2190\00a0";
+    }
+
+    @media (max-width: 768px) {
+      .post {
+        padding: 2.5rem 1.5rem 4rem;
+      }
+
+      .post-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-logo">Two girls, one Claude</a>
+      <div class="nav-links">
+        <a href="../../blog/">Workflows</a>
+        <a href="../../index.html#about">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- POST -->
+  <article class="post">
+    <a href="../../blog/" class="post-back">All workflows</a>
+
+    <div class="post-meta">
+      <span class="post-tag">Episode 3</span>
+      <h1 class="post-title">How to build a B2B content distribution system on LinkedIn (with AI and automation)</h1>
+      <p class="post-byline">March 31, 2026</p>
+      <div class="post-topics">
+        <span>LinkedIn Distribution</span>
+        <span>B2B Marketing</span>
+        <span>HeyReach</span>
+        <span>AI Outreach</span>
+      </div>
+      <div class="post-rule"></div>
+    </div>
+
+    <!-- AUTHOR CARD -->
+    <div class="author-card">
+      <div class="author-photos">
+        <img src="../../NEW Barbara.jpg" alt="Barbara">
+        <img src="../../NEWEST Bojana.png" alt="Bojana">
+      </div>
+      <div class="author-info">
+        <div class="author-names">
+          <a href="https://www.linkedin.com/in/barbara-startup-cookie/?skipRedirect=true" target="_blank">Barbara</a> &amp;
+          <a href="https://www.linkedin.com/in/bojanavojnovic/" target="_blank">Bojana</a>
+        </div>
+        <div class="author-desc">Builders at Two girls, one Claude</div>
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      <p>Build a repeatable LinkedIn content distribution system that turns every content piece into a minimum of 10 derivative assets across multiple channels. This workflow covers how to define your ICP, map distribution channels, build targeted outreach campaigns with <a href="https://heyreach.io">HeyReach</a> and <a href="https://clay.com">Clay</a>, and use Claude to generate relevant outreach messages that get replies. Includes the exact campaign structure that produced a 57% reply rate on a link building campaign.</p>
+
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/PLACEHOLDER" title="Two girls one Claude - Episode 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 6px; margin: 1.5rem 0;"></iframe>
+
+      <div class="section-divider"></div>
+
+      <h2>Workflow Description</h2>
+
+      <p>Most B2B teams create content and then post it once on LinkedIn. That is a distribution problem, not a content problem. This workflow treats every content piece as a source asset that feeds into a structured distribution system across 10 or more channels.</p>
+
+      <p>The system combines AI-powered ICP analysis with automated outreach tools to make sure the right content reaches the right people. You will use Claude for prospecting research and message generation, <a href="https://heyreach.io">HeyReach</a> for LinkedIn outreach automation, <a href="https://clay.com">Clay</a> for lead enrichment, and <a href="https://ahrefs.com">Ahrefs</a> for competitive content analysis.</p>
+
+      <p>This is an operational workflow, not a content strategy document. By the end, you will have a working distribution system that takes a single content asset and pushes it through the channels where your ICP actually spends time.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Before You Begin</h2>
+
+      <h3>Tools you'll need open</h3>
+      <ul>
+        <li><a href="https://claude.ai/download">Claude Code</a> (for ICP analysis, competitor research, and message generation)</li>
+        <li><a href="https://heyreach.io">HeyReach</a> (LinkedIn outreach automation with multi-account sending)</li>
+        <li><a href="https://clay.com">Clay</a> (lead enrichment and data workflows)</li>
+        <li><a href="https://ahrefs.com">Ahrefs</a> (competitor backlink analysis and content research)</li>
+        <li><a href="https://trigify.io">Trigify</a> (signal-based prospecting for identifying active prospects)</li>
+      </ul>
+
+      <h3>What you'll need before starting</h3>
+      <ul>
+        <li><strong>A content piece ready for distribution.</strong> This can be a YouTube video, blog post, webinar recording, or any substantial content asset. The system works best when the source material contains concrete data or original insights.</li>
+        <li><strong>A list of your existing customers or engaged audience.</strong> You need this for the ICP analysis step. Export your CRM contacts, LinkedIn connections who engage with your content, or newsletter subscribers with job title data.</li>
+        <li><strong>LinkedIn accounts connected to HeyReach.</strong> The outreach component requires at least one LinkedIn account connected to HeyReach. Multiple accounts increase sending capacity.</li>
+        <li><strong>Access to Ahrefs or a similar SEO tool.</strong> You need this for competitor backlink analysis in the outreach campaign step. If you use Claude Code with Ahrefs MCP integration, the research step becomes significantly faster.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Why your target list matters more than your message</strong>
+        Based on analysis of 96,051 campaigns, relevance and good prospecting matter more than personalization. Your ICP definition and lead list quality determine your reply rate far more than any message copy optimization.
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>How It Works</h2>
+
+      <p>The distribution system follows three stages. Each stage builds on the previous one and produces specific outputs you will use in the next step.</p>
+
+      <p><strong>ICP analysis</strong> &rarr; <strong>Distribution channel mapping</strong> &rarr; <strong>Content derivative production</strong> &rarr; <strong>Outreach campaign setup</strong> &rarr; <strong>Human handoff on response</strong></p>
+
+      <p>The core principle: not all content goes to all channels. Some content is built for search, some for social, some for email, and some for direct outreach. The channel mapping step determines where each derivative piece belongs.</p>
+
+      <img src="distribution-channels.jpg" alt="Distribution channel map showing how a single content piece flows into 10+ derivative assets across YouTube, LinkedIn, blog, newsletter, communities, and outreach campaigns">
+
+      <p>A single YouTube video becomes: shorter video clips, community posts, blog placements on external sites, additional blog articles on your own site, downloadable playbooks, newsletter content, posts in closed communities, LinkedIn posts across multiple accounts, outreach campaigns to relevant prospects, and sales enablement materials for your team.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Build Instructions</h2>
+
+      <div class="step">
+        <div class="step-label">Step 1: Define your ICP with data</div>
+        <p>Export your existing customer list and LinkedIn engagement data. Feed this into Claude and ask it to identify patterns in job titles, company sizes, industries, and seniority levels. Do not guess your ICP based on who you think should buy. Build it from who actually engages and converts. For B2B startups, common segments include content marketers, heads of content or growth, and marketing managers at mid to senior level. The output of this step is a written ICP document with specific job titles, company characteristics, and the problems they are trying to solve.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Step 2: Map your distribution channels</div>
+        <p>List every channel where your ICP consumes content. For each channel, define what format the content needs to be in and what purpose it serves. A YouTube video serves discovery. A LinkedIn post serves engagement. A newsletter serves retention. An outreach message serves direct conversion. Not every derivative piece goes everywhere. Match content to the channel where it creates the most value for the person receiving it.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Step 3: Produce your content derivatives</div>
+        <p>Take your source content and produce a minimum of 10 derivative pieces. Use Claude to draft each derivative in the format appropriate for its target channel. A 20-minute YouTube video can produce: 3 to 4 short clips (under 90 seconds each), 5 or more LinkedIn posts (each covering a different angle), 1 to 2 blog articles expanding on specific points, 1 newsletter recap, 1 playbook or checklist, and talking points for your sales team. Each derivative should stand alone without requiring the audience to watch the original.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Step 4: Build your prospect list with enrichment</div>
+        <p>Connect Claude to Ahrefs via MCP to pull competitor backlink data and identify sites linking to similar content. Feed this data into Clay for enrichment: pull LinkedIn profiles, verify email addresses, and add company information. The output is a clean lead list of people who have already demonstrated interest in content like yours. This step produced the 57% reply rate campaign because the prospects were pre-qualified by their existing linking behavior.</p>
+      </div>
+
+      <img src="heyreach-campaign.png" alt="HeyReach campaign dashboard showing outreach sequence setup with connection request and follow-up messages">
+
+      <div class="step">
+        <div class="step-label">Step 5: Set up your outreach campaign in HeyReach</div>
+        <p>Import your enriched lead list into <a href="https://heyreach.io">HeyReach</a>. Build a sequence with a connection request followed by 1 to 2 follow-up messages. For connection requests: if you cannot reference something specific about the person's content or recent activity, send a blank request. Blank connection requests outperform ones with generic messages. For follow-up messages, reference the specific content piece you are distributing and explain why it is relevant to their work. Keep messages under 300 characters. No pitching in the first message.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Step 6: Configure human handoff on response</div>
+        <p>Set up HeyReach to stop the automated sequence the moment a prospect replies. When a response comes in, a human takes over the conversation. Automated follow-ups after someone has already responded destroy trust. The automation handles volume. The human handles the relationship. Check your inbox at least twice daily during active campaigns and respond within 4 hours during business hours.</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>Quality Checklist</h2>
+
+      <h3>Before launching any outreach campaign</h3>
+      <ul>
+        <li>Does your target list match your ICP document precisely (job titles, company size, industry)?</li>
+        <li>Have you verified that each prospect has a reason to care about the content you are sharing?</li>
+        <li>Is your connection request blank or genuinely relevant (not generic personalization)?</li>
+        <li>Are follow-up messages under 300 characters?</li>
+        <li>Is the automated sequence configured to stop on reply?</li>
+        <li>Do you have a human assigned to handle responses within 4 hours?</li>
+      </ul>
+
+      <h3>Before publishing content derivatives</h3>
+      <ul>
+        <li>Does each derivative piece stand alone without requiring the original content?</li>
+        <li>Have you matched each piece to the correct channel (search, social, email, or direct)?</li>
+        <li>Did you produce at least 10 derivative pieces from the source content?</li>
+        <li>Are LinkedIn posts formatted for LinkedIn (not article blocks of text)?</li>
+        <li>Do short video clips have a hook in the first 3 seconds?</li>
+      </ul>
+
+      <h3>For the distribution system overall</h3>
+      <ul>
+        <li>Is your ICP document based on actual data, not assumptions?</li>
+        <li>Have you documented which channels produce engagement vs. conversions?</li>
+        <li>Are you tracking reply rates against the 15 to 18% benchmark?</li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2>Common Mistakes to Avoid</h2>
+
+      <ul>
+        <li><strong>Blasting the same content to every channel.</strong> A LinkedIn post, a blog article, and an outreach message serve different purposes. If you copy-paste the same text across all three, you are wasting two of those channels. Adapt the format, length, and angle for each destination.</li>
+        <li><strong>Using generic personalization in outreach.</strong> Messages like "I saw you work at [Company]" or "I noticed you're based in [City]" perform worse than no personalization at all. If you cannot reference something specific about the person's content or recent work, send a blank connection request instead.</li>
+        <li><strong>Optimizing message copy before fixing your target list.</strong> If your reply rate is low, the problem is almost always the list, not the message. A relevant message sent to the wrong person gets ignored. A basic message sent to the right person gets a reply. Fix your ICP and prospecting before rewriting your outreach.</li>
+        <li><strong>Pushing volume for the sake of volume.</strong> Content inflation is real. Publishing 20 mediocre LinkedIn posts per week devalues your entire content presence. Five well-targeted posts distributed to the right people through the right channels will outperform 20 generic posts every time.</li>
+        <li><strong>Leaving automated sequences running after a reply.</strong> If someone responds to your outreach and then receives another automated follow-up, you have lost them. Configure your tool to stop the sequence immediately on reply and have a human take over.</li>
+        <li><strong>Skipping the ICP analysis.</strong> Jumping straight to outreach without defining who you are targeting is the most expensive mistake in this workflow. Every downstream step depends on the accuracy of your ICP. Spend the time on this step.</li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2>Handling Special Situations</h2>
+
+      <h3>When your content is niche and your audience is small</h3>
+      <p>Small audiences make targeting easier, not harder. With fewer than 1,000 potential prospects, you can research each person individually and write highly specific outreach messages. The 57% reply rate campaign worked because the list was small and every prospect was pre-qualified. Do not try to scale a niche audience with volume. Scale it with relevance.</p>
+
+      <h3>When prospects are active on LinkedIn but do not accept connection requests</h3>
+      <p>If your connection acceptance rate is below 1 in 5, review your LinkedIn profile first. Prospects evaluate your profile before accepting. Make sure your headline, about section, and recent posts clearly communicate what you do and why it is relevant to them. A strong profile with a blank connection request outperforms a weak profile with a personalized message.</p>
+
+      <h3>When you are distributing content for a product you are building (not an agency)</h3>
+      <p>The same system works for in-house teams. The difference: your ICP is your potential customer, not a client's audience. Use your product's user data and CRM to build the ICP. Your content derivatives should include sales enablement materials (one-pagers, demo scripts, case study summaries) in addition to the marketing content. Give your sales team the same derivative content so they can use it in conversations.</p>
+
+      <h3>When a campaign gets low reply rates</h3>
+      <p>Before rewriting your messages, check three things in order. First, is your target list accurate? Pull 20 random profiles from the list and verify they match your ICP. Second, are you reaching active LinkedIn users? Profiles with no activity in 30 or more days will not respond regardless of your message. Third, is your content relevant to their current priorities? If all three check out and reply rates are still low, then test new message copy.</p>
+
+      <h3>When you have multiple products or service lines</h3>
+      <p>Run separate campaigns for each product or service. Do not combine audiences. Each product has a different ICP, and mixing them in one campaign dilutes your targeting. The extra setup time pays for itself in higher reply rates because every message is relevant to the specific person receiving it.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Measuring Success</h2>
+
+      <h3>Outreach performance benchmarks</h3>
+      <ul>
+        <li><strong>Connection acceptance rate:</strong> 1 in 5 connections accepted is the baseline. Below that, your profile or targeting needs work.</li>
+        <li><strong>Reply rate:</strong> 15 to 18% is the industry benchmark for LinkedIn outreach. Well-targeted campaigns with relevant messaging consistently hit 25 to 40%. The link building campaign described in this workflow hit 57% by combining Claude-powered research with pre-qualified prospects from Ahrefs data.</li>
+        <li><strong>Content derivatives per source asset:</strong> Minimum 10 derivative pieces per original content asset. Track this as a production metric to make sure you are extracting full value from every piece you create.</li>
+      </ul>
+
+      <h3>Distribution system health</h3>
+      <ul>
+        <li><strong>Channel coverage:</strong> Each content piece should appear in at least 5 distinct channels (LinkedIn, blog, newsletter, communities, outreach)</li>
+        <li><strong>Response time on replies:</strong> Under 4 hours during business hours. Prospects who reply expect a human conversation, not a 48-hour wait.</li>
+        <li><strong>Human handoff rate:</strong> 100% of replies should be handled by a human. If automated messages are going out after replies, your system is broken.</li>
+      </ul>
+
+      <h3>What to optimize first</h3>
+      <ul>
+        <li>If reply rates are below 15%: fix your target list and ICP, not your messages</li>
+        <li>If connection rates are below 1 in 5: fix your LinkedIn profile and prospect quality</li>
+        <li>If you are producing fewer than 10 derivatives per content piece: build a distribution checklist and follow it for every asset</li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2>The Prompts</h2>
+
+      <h3>Prompt 1: ICP analysis</h3>
+      <div class="callout">
+        <strong>Prompt</strong>
+        Analyze my LinkedIn engagement data and customer list (attached). Identify patterns in job titles, company sizes, industries, and seniority levels of the people who engage most with my content and convert into customers. Build an ICP document that includes: specific job titles (not categories), company size ranges, industries, seniority level, and the top 3 problems these people are trying to solve. Be specific. "Marketing managers" is too broad. "Content marketing managers at B2B SaaS companies with 50 to 200 employees" is what I need.
+      </div>
+
+      <h3>Prompt 2: Distribution channel selection</h3>
+      <div class="callout">
+        <strong>Prompt</strong>
+        I have a [describe your content piece: video, blog post, webinar, etc.]. Map out every distribution channel where my ICP (attached ICP document) consumes content. For each channel, specify: the format the content needs to be in, the purpose it serves (discovery, engagement, retention, or conversion), and whether this specific piece of content belongs there. Not every piece goes everywhere. Some content is for search, some for social, some for email, some for direct outreach. Give me a minimum of 10 derivative content pieces with the target channel for each.
+      </div>
+
+      <h3>Prompt 3: Outreach campaign crafting</h3>
+      <div class="callout">
+        <strong>Prompt</strong>
+        I have a lead list of [describe prospects: e.g., content marketers at B2B SaaS companies who link to competitor content]. Write a LinkedIn outreach sequence for HeyReach with: 1) A connection request message (or recommend blank if there is no relevant hook), 2) A first follow-up message (under 300 characters) that references the content piece I am distributing and explains why it is relevant to their specific work, 3) A second follow-up (under 300 characters) with a different angle. Do not pitch anything. Do not use generic personalization like job title or location. Only reference specifics that show I have looked at their work. If you cannot find a specific reference point, recommend sending a blank connection request.
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>Expected Results</h2>
+
+      <ul>
+        <li>A documented ICP built from actual engagement and conversion data, not assumptions</li>
+        <li>A distribution channel map that specifies where each content derivative belongs and why</li>
+        <li>A minimum of 10 derivative content pieces from every source asset you produce</li>
+        <li>A working outreach campaign in HeyReach with targeted prospects, relevant messaging, and automatic human handoff on reply</li>
+        <li>Reply rates above the 15 to 18% industry benchmark on well-targeted campaigns</li>
+        <li>A repeatable system you can run for every content piece you publish going forward</li>
+        <li>A distribution checklist your team can follow without needing to reinvent the process each time</li>
+      </ul>
+
+      <div class="callout">
+        <strong>The 57% reply rate campaign breakdown</strong>
+        Bojana connected Claude to Ahrefs via MCP, pulled competitor backlink analysis, fed the data to Clay for enrichment, created a pre-qualified lead list in HeyReach, and sent relevant outreach messages that referenced each prospect's existing linking behavior. No generic personalization. No pitching. Just relevant, targeted messages to people who had already demonstrated interest in the topic. The result: 57% reply rate on a link building campaign.
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What is LinkedIn content distribution for B2B?</h3>
+        <div class="faq-answer">
+          <p>LinkedIn content distribution for B2B is the process of taking a single content piece and systematically pushing it across multiple channels to reach your target audience. This includes derivative content like shorter videos, community posts, blog placements, newsletters, LinkedIn outreach campaigns, and sales enablement materials. The goal is to extract maximum reach from every piece of content you produce rather than posting it once and hoping for organic traction.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">How many derivative pieces should each content asset produce?</h3>
+        <div class="faq-answer">
+          <p>Every content piece should spawn a minimum of 10 derivative content pieces. A single YouTube video can become shorter clips, community posts, blog placements, additional blog articles, playbooks, newsletter content, posts for closed communities, LinkedIn posts across multiple accounts, outreach campaigns, and sales enablement materials. If you are producing fewer than 10 derivatives, you are leaving distribution value on the table.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Does personalization matter in LinkedIn outreach?</h3>
+        <div class="faq-answer">
+          <p>The right kind of personalization matters. Reading someone's content and referencing specifics works. Generic personalization like mentioning where someone lives or restating their job title does not. Based on analysis of 96,051 campaigns, relevance and good prospecting matter more than message personalization. Blank connection requests actually outperform ones with generic messages. Only personalize if you have something genuinely specific to say.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What reply rate can I expect from LinkedIn outreach campaigns?</h3>
+        <div class="faq-answer">
+          <p>Industry benchmarks sit around 15 to 18% reply rates. With highly targeted prospecting and relevant messaging, reply rates of 25 to 40% are common. On a link building campaign using Claude connected to Ahrefs via MCP, Clay for enrichment, and HeyReach for sending, this workflow produced a 57% reply rate. The variable that matters most is list quality, not message copy.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Should I send a connection request with or without a message?</h3>
+        <div class="faq-answer">
+          <p>If you do not have something genuinely relevant to say, send a blank connection request. Blank requests outperform ones with generic messages. Only include a message if you can reference something specific about the person's content, company, or recent activity. A message that adds no value performs worse than no message at all.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What tools do I need for B2B LinkedIn content distribution?</h3>
+        <div class="faq-answer">
+          <p>The core stack includes HeyReach for LinkedIn outreach automation, Clay for lead enrichment, Ahrefs for competitor and content analysis, Claude Code for AI-powered prospecting and message generation, and Trigify for signal-based prospecting. You do not need all of these on day one. Start with HeyReach and Claude, then add enrichment tools as your campaigns scale.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">How do I define my ICP for LinkedIn outreach?</h3>
+        <div class="faq-answer">
+          <p>Build your ICP from data, not assumptions. Analyze your existing customers and engaged audience to identify patterns in job titles, company sizes, industries, and seniority levels. For B2B startups, common segments include content marketers, heads of content or growth, and marketing managers at mid to senior level. Use Claude to analyze your LinkedIn engagement data and pull out the specific titles and company characteristics that convert.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What is content inflation and how do I avoid it?</h3>
+        <div class="faq-answer">
+          <p>Content inflation happens when you push volume for the sake of volume, which devalues everything you publish. Avoid it by matching content to the right channel instead of blasting everything everywhere. Some content is built for search, some for social, some for email, and some for direct outreach. Not every piece belongs on every channel. Five targeted posts outperform 20 generic ones.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">When should automation stop and a human take over in LinkedIn outreach?</h3>
+        <div class="faq-answer">
+          <p>Automation should stop the moment a prospect responds. When the system detects a reply, it pauses the sequence immediately and a human takes over the conversation. Automated follow-ups after someone has already responded destroy trust and make the outreach feel robotic. The automation handles the initial contact at scale. The human handles the relationship.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Can I use this distribution system without HeyReach?</h3>
+        <div class="faq-answer">
+          <p>You can apply the distribution framework with any LinkedIn outreach tool. HeyReach is used in this workflow because of its multi-account sending capabilities and campaign analytics. The principles of targeted prospecting, relevant messaging, and human handoff on response apply regardless of which tool you use. The ICP analysis and content distribution mapping steps work with any outreach platform.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">How do I measure if my LinkedIn distribution system is working?</h3>
+        <div class="faq-answer">
+          <p>Track three metrics: connection acceptance rate (benchmark is 1 in 5 connections accepted), reply rate (benchmark is 15 to 18%, top performers hit 40% or higher on targeted campaigns), and content derivatives per original piece (target minimum 10). If your reply rates are below benchmark, the problem is almost always your target list, not your message copy.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="post-cta">
+        <p class="post-cta-title">Want more like this?</p>
+        <p class="post-cta-text">One email per week. Recaps, prompts, and lessons from every live session.</p>
+        <form class="hero-form" onsubmit="handleSubscribe(event)">
+          <div class="form-row">
+            <input type="email" placeholder="your@email.com" required class="hero-input" />
+            <button type="submit" class="hero-button">Subscribe</button>
+          </div>
+          <p class="form-success" id="formSuccess">You're in. Check your inbox.</p>
+        </form>
+      </div>
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-rule"></div>
+      <p class="footer-logo">Two girls, one Claude</p>
+      <p class="footer-sub">— live build sessions —</p>
+      <p class="footer-copy">&copy; 2026 Two girls, one Claude All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    async function handleSubscribe(e) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input').value;
+      const button = form.querySelector('button');
+      const success = document.getElementById('formSuccess');
+
+      button.disabled = true;
+      button.textContent = '...';
+
+      try {
+        const res = await fetch('https://twogirlsoneclaude.substack.com/api/v1/free', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            first_url: 'https://twogirlsoneclaude.substack.com/',
+            source: 'embed'
+          })
+        });
+
+        if (res.ok) {
+          success.textContent = "You're in. Check your inbox.";
+          success.classList.add('visible');
+          form.querySelector('input').value = '';
+        } else {
+          success.textContent = 'Something went wrong. Try again.';
+          success.classList.add('visible');
+        }
+      } catch (err) {
+        window.open('https://twogirlsoneclaude.substack.com/subscribe?simple=true&email=' + encodeURIComponent(email), '_blank');
+        success.textContent = 'Finishing signup in a new tab.';
+        success.classList.add('visible');
+        form.querySelector('input').value = '';
+      }
+
+      button.disabled = false;
+      button.textContent = 'Subscribe';
+      setTimeout(() => success.classList.remove('visible'), 5000);
+    }
+  </script>
+
+</body>
+</html>
